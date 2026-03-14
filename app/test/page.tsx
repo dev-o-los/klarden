@@ -8,7 +8,7 @@ import {
 } from "@/registry/klarden-ui/accordion";
 import { CommandOrbit } from "@/registry/klarden-ui/command-orbit";
 import { MagneticDock } from "@/registry/klarden-ui/magnetic-dock";
-import OrbitContextMenu from "@/registry/klarden-ui/orbit-context-menu";
+import { OrbitContextMenu } from "@/registry/klarden-ui/orbit-context-menu";
 import { RichButton } from "@/registry/klarden-ui/rich-button";
 import {
   Bell,
@@ -26,8 +26,6 @@ import {
 export default function TestPage() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 p-8 pb-32">
-      <OrbitContextMenu />
-
       <div className="max-w-5xl mx-auto space-y-16">
         {/* Header */}
         <header className="space-y-4 border-b border-zinc-200 dark:border-zinc-800 pb-8">
@@ -42,11 +40,6 @@ export default function TestPage() {
           </h1>
           <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl text-lg">
             An interactive testing environment for the Klarden UI ecosystem.
-            Right-click anywhere to trigger the{" "}
-            <span className="font-bold text-zinc-900 dark:text-zinc-100">
-              Orbit Context Menu
-            </span>
-            .
           </p>
         </header>
 
@@ -183,20 +176,21 @@ export default function TestPage() {
             <h2>Orbit Context Menu</h2>
           </div>
 
-          <div className="p-12 rounded-3xl border-2 border-dashed border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center text-center space-y-4">
-            <div className="h-16 w-16 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center shadow-inner">
-              <MousePointer2 className="text-zinc-400" size={32} />
+          <OrbitContextMenu className="rounded-3xl overflow-hidden">
+            <div className="p-12 border-2 border-dashed border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 flex flex-col items-center justify-center text-center space-y-4">
+              <div className="h-16 w-16 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center shadow-inner">
+                <MousePointer2 className="text-zinc-400" size={32} />
+              </div>
+              <div className="space-y-2">
+                <p className="text-zinc-900 dark:text-zinc-50 font-bold text-lg">
+                  Right-click ONLY in this zone
+                </p>
+                <p className="text-zinc-500 dark:text-zinc-400 max-w-md mx-auto">
+                  The Orbit Context Menu is now scoped. It will not trigger if you right-click outside this dashed area.
+                </p>
+              </div>
             </div>
-            <div className="space-y-2">
-              <p className="text-zinc-900 dark:text-zinc-50 font-bold text-lg">
-                Right-click anywhere in this zone
-              </p>
-              <p className="text-zinc-500 dark:text-zinc-400 max-w-md mx-auto">
-                The Orbit Context Menu is globally registered but feels most at
-                home in dedicated interactive canvases.
-              </p>
-            </div>
-          </div>
+          </OrbitContextMenu>
         </section>
 
         {/* Magnetic Dock Section */}
