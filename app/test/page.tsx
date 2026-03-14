@@ -9,6 +9,7 @@ import {
 import { CommandOrbit } from "@/registry/klarden-ui/command-orbit";
 import { MagneticDock } from "@/registry/klarden-ui/magnetic-dock";
 import { OrbitContextMenu } from "@/registry/klarden-ui/orbit-context-menu";
+import { PortalUploader } from "@/registry/klarden-ui/portal-uploader";
 import { RichButton } from "@/registry/klarden-ui/rich-button";
 import {
   Bell,
@@ -20,6 +21,7 @@ import {
   Layout,
   MousePointer2,
   Settings,
+  Upload,
   Zap,
 } from "lucide-react";
 
@@ -186,7 +188,8 @@ export default function TestPage() {
                   Right-click ONLY in this zone
                 </p>
                 <p className="text-zinc-500 dark:text-zinc-400 max-w-md mx-auto">
-                  The Orbit Context Menu is now scoped. It will not trigger if you right-click outside this dashed area.
+                  The Orbit Context Menu is now scoped. It will not trigger if
+                  you right-click outside this dashed area.
                 </p>
               </div>
             </div>
@@ -199,12 +202,27 @@ export default function TestPage() {
             <MousePointer2 className="text-rose-500" size={24} />
             <h2>Magnetic Dock</h2>
           </div>
-          
+
           <div className="relative h-48 bg-white dark:bg-zinc-900/50 rounded-3xl border border-zinc-200 dark:border-zinc-800 flex items-center justify-center overflow-hidden">
             <div className="absolute top-4 text-[10px] font-black uppercase tracking-widest text-zinc-400">
               Interactive Dock System
             </div>
             <MagneticDock className="mb-4" />
+          </div>
+        </section>
+
+        {/* Portal Uploader Section */}
+        <section className="space-y-8">
+          <div className="flex items-center gap-2 text-zinc-900 dark:text-zinc-50 font-bold text-xl tracking-tight">
+            <Upload className="text-blue-500" size={24} />
+            <h2>Portal Uploader</h2>
+          </div>
+          
+          <div className="relative h-[400px] bg-white dark:bg-zinc-900/50 rounded-3xl border border-zinc-200 dark:border-zinc-800 flex items-center justify-center overflow-hidden">
+            <div className="absolute top-6 left-6 text-xs font-medium text-zinc-400">
+              Drag and drop a file into the orb
+            </div>
+            <PortalUploader />
           </div>
         </section>
       </div>

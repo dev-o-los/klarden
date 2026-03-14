@@ -78,6 +78,21 @@
       "dependencies": ["framer-motion", "lucide-react"],
       "registryDependencies": [],
       "category": "navigation"
+    },
+    {
+      "name": "portal-uploader",
+      "type": "registry:component",
+      "title": "Portal Uploader",
+      "description": "A central circular drop zone with orbital animations and progress tracking.",
+      "files": [
+        {
+          "path": "registry/klarden-ui/portal-uploader.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": ["framer-motion", "lucide-react"],
+      "registryDependencies": [],
+      "category": "button"
     }
   ]
 }
