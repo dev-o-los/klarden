@@ -217,7 +217,7 @@ export default function TestPage() {
             <Upload className="text-blue-500" size={24} />
             <h2>Portal Uploader</h2>
           </div>
-          
+
           <div className="relative h-[400px] bg-white dark:bg-zinc-900/50 rounded-3xl border border-zinc-200 dark:border-zinc-800 flex items-center justify-center overflow-hidden">
             <div className="absolute top-6 left-6 text-xs font-medium text-zinc-400">
               Drag and drop a file into the orb
