@@ -63,6 +63,51 @@
       "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
       "registryDependencies": [],
       "category": "layout"
+    },
+    {
+      "name": "magnetic-dock",
+      "type": "registry:component",
+      "title": "Magnetic Dock",
+      "description": "A bottom-docked navigation bar with proximity-based magnification.",
+      "files": [
+        {
+          "path": "registry/klarden-ui/magnetic-dock.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": ["framer-motion", "lucide-react"],
+      "registryDependencies": [],
+      "category": "navigation"
+    },
+    {
+      "name": "portal-uploader",
+      "type": "registry:component",
+      "title": "Portal Uploader",
+      "description": "A central circular drop zone with orbital animations and progress tracking.",
+      "files": [
+        {
+          "path": "registry/klarden-ui/portal-uploader.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": ["framer-motion", "lucide-react"],
+      "registryDependencies": [],
+      "category": "button"
+    },
+    {
+      "name": "orbit-button",
+      "type": "registry:component",
+      "title": "Orbit Button",
+      "description": "A circular button with a rotating orbital ring and premium animations.",
+      "files": [
+        {
+          "path": "registry/klarden-ui/orbit-button.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": ["framer-motion", "lucide-react"],
+      "registryDependencies": [],
+      "category": "button"
     }
   ]
 }

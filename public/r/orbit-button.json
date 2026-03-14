@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orbit-button",
+  "title": "Orbit Button",
+  "description": "A circular button with a rotating orbital ring and premium animations.",
+  "dependencies": [
+    "framer-motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/klarden-ui/orbit-button.tsx",
+      "content": "\"use client\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\nimport { motion } from \"framer-motion\";\r\nimport { Plus } from \"lucide-react\";\r\nimport React from \"react\";\r\n\r\ninterface OrbitButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\r\n  className?: string;\r\n  size?: number;\r\n}\r\n\r\nexport const OrbitButton: React.FC<OrbitButtonProps> = ({\r\n  className,\r\n  size = 64,\r\n  children,\r\n  ...props\r\n}) => {\r\n  return (\r\n    <div className=\"relative flex items-center justify-center p-4\">\r\n      {/* Rotating Dotted Ring */}\r\n      <motion.div\r\n        animate={{ rotate: 360 }}\r\n        transition={{ duration: 10, repeat: Infinity, ease: \"linear\" }}\r\n        style={{ width: size * 1.4, height: size * 1.4 }}\r\n        className=\"absolute border border-dotted border-zinc-300 dark:border-zinc-700 rounded-full pointer-events-none\"\r\n      />\r\n\r\n      <motion.button\r\n        whileHover={{ scale: 1.05 }}\r\n        whileTap={{ scale: 0.95 }}\r\n        className={cn(\r\n          \"relative flex items-center justify-center rounded-full transition-shadow duration-500\",\r\n          \"bg-white dark:bg-zinc-950 border-2 border-zinc-200 dark:border-zinc-800 shadow-2xl\",\r\n          \"hover:shadow-zinc-500/10 active:shadow-inner\",\r\n          className\r\n        )}\r\n        style={{ width: size, height: size }}\r\n        {...props}\r\n      >\r\n        <div className=\"relative z-10\">\r\n          {children || <Plus className=\"w-8 h-8 text-zinc-900 dark:text-zinc-100\" />}\r\n        </div>\r\n        \r\n        {/* Subtle Gradient Overlay */}\r\n        <div className=\"absolute inset-0 rounded-full bg-linear-to-br from-black/5 to-transparent dark:from-white/5 pointer-events-none\" />\r\n      </motion.button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default OrbitButton;\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

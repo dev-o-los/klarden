@@ -95,19 +95,19 @@
       "category": "button"
     },
     {
-      "name": "orbital-globe",
+      "name": "orbit-button",
       "type": "registry:component",
-      "title": "Orbital Globe",
-      "description": "A minimalist, stylized representation of a rotating Earth with layered animations.",
+      "title": "Orbit Button",
+      "description": "A circular button with a rotating orbital ring and premium animations.",
       "files": [
         {
-          "path": "registry/klarden-ui/orbital-globe.tsx",
+          "path": "registry/klarden-ui/orbit-button.tsx",
           "type": "registry:component"
         }
       ],
-      "dependencies": ["framer-motion"],
+      "dependencies": ["framer-motion", "lucide-react"],
       "registryDependencies": [],
-      "category": "other"
+      "category": "button"
     }
   ]
 }

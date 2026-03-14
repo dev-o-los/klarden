@@ -8,6 +8,7 @@ import {
 } from "@/registry/klarden-ui/accordion";
 import { CommandOrbit } from "@/registry/klarden-ui/command-orbit";
 import { MagneticDock } from "@/registry/klarden-ui/magnetic-dock";
+import { OrbitButton } from "@/registry/klarden-ui/orbit-button";
 import { OrbitContextMenu } from "@/registry/klarden-ui/orbit-context-menu";
 import { PortalUploader } from "@/registry/klarden-ui/portal-uploader";
 import { RichButton } from "@/registry/klarden-ui/rich-button";
@@ -217,12 +218,31 @@ export default function TestPage() {
             <Upload className="text-blue-500" size={24} />
             <h2>Portal Uploader</h2>
           </div>
-
+          
           <div className="relative h-[400px] bg-white dark:bg-zinc-900/50 rounded-3xl border border-zinc-200 dark:border-zinc-800 flex items-center justify-center overflow-hidden">
             <div className="absolute top-6 left-6 text-xs font-medium text-zinc-400">
               Drag and drop a file into the orb
             </div>
             <PortalUploader />
+          </div>
+        </section>
+
+        {/* Orbit Button Section */}
+        <section className="space-y-8">
+          <div className="flex items-center gap-2 text-zinc-900 dark:text-zinc-50 font-bold text-xl tracking-tight">
+            <Layers className="text-zinc-400" size={24} />
+            <h2>Orbit Button</h2>
+          </div>
+          
+          <div className="relative h-48 bg-white dark:bg-zinc-900/50 rounded-3xl border border-zinc-200 dark:border-zinc-800 flex items-center justify-center overflow-hidden">
+            <div className="absolute top-4 text-[10px] font-black uppercase tracking-widest text-zinc-400">
+              Animated Trigger Core
+            </div>
+            <div className="flex gap-12">
+              <OrbitButton size={48} />
+              <OrbitButton size={64} />
+              <OrbitButton size={80} />
+            </div>
           </div>
         </section>
       </div>

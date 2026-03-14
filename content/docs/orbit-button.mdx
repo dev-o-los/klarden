@@ -1,0 +1,58 @@
+---
+title: Orbit Button
+description: A circular button with a rotating orbital ring and premium animations.
+---
+
+import { OrbitButton } from "@/registry/klarden-ui/orbit-button";
+
+The Orbit Button is a centerpiece component designed for high-end interfaces. It features a continuous orbital rotation and tactile feedback.
+
+## Preview
+
+<div className="flex items-center justify-center p-12 bg-zinc-50 dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 my-8">
+  <OrbitButton />
+</div>
+
+## Installation
+
+```bash
+npx shadcn@latest add https://klarden-ui.com/r/orbit-button.json
+```
+
+## Usage
+
+```tsx
+import { OrbitButton } from "@/components/ui/orbit-button";
+import { Search } from "lucide-react";
+
+export default function Example() {
+  return (
+    <OrbitButton>
+      <Search className="w-6 h-6" />
+    </OrbitButton>
+  );
+}
+```
+
+## Properties
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `size` | `number` | `64` | The diameter of the central button. |
+| `className` | `string` | - | Additional Tailwind classes for the button. |
+| `children` | `ReactNode` | `<Plus />` | The icon or content inside the button. |
+
+## Variants
+
+### Custom Icons
+
+<div className="flex items-center justify-center p-12 bg-zinc-50 dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800 my-8">
+  <div className="flex gap-8">
+    <OrbitButton size={48}>
+      <Search className="w-5 h-5" />
+    </OrbitButton>
+    <OrbitButton size={80}>
+      <span className="text-sm font-bold">GO</span>
+    </OrbitButton>
+  </div>
+</div>
