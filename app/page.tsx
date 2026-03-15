@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-zinc-950 text-zinc-50 font-sans selection:bg-zinc-100 selection:text-zinc-950">
+    <div className="relative min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 font-sans selection:bg-zinc-900 selection:text-zinc-50 dark:selection:bg-zinc-100 dark:selection:text-zinc-950 transition-colors duration-500">
       <Navbar />
 
       <OrbitContextMenu>

@@ -23,10 +23,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="text-4xl md:text-6xl font-medium tracking-tight leading-[1.1] text-zinc-50"
+          className="text-4xl md:text-6xl font-medium tracking-tight leading-[1.1] text-zinc-900 dark:text-zinc-50"
         >
           Refined UI components for <br />
-          <span className="font-serif italic text-zinc-400">
+          <span className="font-serif italic text-zinc-500 dark:text-zinc-400">
             modern interfaces
           </span>
         </motion.h1>
@@ -35,7 +35,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="mx-auto max-w-2xl text-zinc-400 text-base md:text-lg font-medium leading-relaxed tracking-tight"
+          className="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400 text-base md:text-lg font-medium leading-relaxed tracking-tight"
         >
           An ecosystem of high-end React components.{" "}
           <br className="hidden md:block" />
@@ -53,7 +53,7 @@ export function Hero() {
           <RichButton
             size="default"
             color="default"
-            className="rounded-full h-11 px-8 text-sm font-semibold tracking-tight border-zinc-700"
+            className="rounded-full h-11 px-8 text-sm font-semibold tracking-tight border-zinc-200 dark:border-zinc-700"
           >
             Get Started <ArrowRight size={16} className="ml-2" />
           </RichButton>
@@ -64,7 +64,7 @@ export function Hero() {
             color="blue"
             className="rounded-full h-11 px-8 text-sm font-semibold tracking-tight gap-2"
           >
-            <Layout size={16} /> Components
+            <Layout size={16} className="mr-2" /> Components
           </RichButton>
         </Link>
       </motion.div>

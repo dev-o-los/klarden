@@ -34,13 +34,13 @@ export function Showcase() {
       {/* Command Orbit */}
       <motion.div
         variants={itemVariants}
-        className="md:col-span-8 group relative overflow-hidden rounded-[2.5rem] border border-zinc-800 bg-zinc-900/20 shadow-2xl backdrop-blur-sm"
+        className="md:col-span-8 group relative overflow-hidden rounded-[2.5rem] border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/20 shadow-2xl backdrop-blur-sm transition-colors duration-500"
       >
         <div className="absolute top-8 left-8 z-10">
-          <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-950/50 border border-zinc-800 text-[8px] font-black uppercase tracking-widest text-zinc-500 mb-2 w-fit">
+          <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 text-[8px] font-black uppercase tracking-widest text-zinc-500 mb-2 w-fit">
             <MousePointer2 size={10} /> Interactive
           </div>
-          <h3 className="text-xl font-black tracking-tight">Command Orbit</h3>
+          <h3 className="text-xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">Command Orbit</h3>
         </div>
         <div className="flex items-center justify-center min-h-100">
           <CommandOrbit radius={100} />
@@ -50,15 +50,15 @@ export function Showcase() {
       {/* Portal Uploader */}
       <motion.div
         variants={itemVariants}
-        className="md:col-span-4 group relative overflow-hidden rounded-[2.5rem] border border-zinc-800 bg-zinc-900/20 shadow-2xl backdrop-blur-sm"
+        className="md:col-span-4 group relative overflow-hidden rounded-[2.5rem] border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/20 shadow-2xl backdrop-blur-sm transition-colors duration-500"
       >
         <div className="absolute top-8 left-8 z-10">
-          <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-950/50 border border-zinc-800 text-[8px] font-black uppercase tracking-widest text-zinc-500 mb-2 w-fit">
+          <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 text-[8px] font-black uppercase tracking-widest text-zinc-500 mb-2 w-fit">
             <Zap size={10} /> Portal
           </div>
-          <h3 className="text-xl font-black tracking-tight">Uploader</h3>
+          <h3 className="text-xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">Uploader</h3>
         </div>
-        <div className="flex items-center justify-center min-h-[400px]">
+        <div className="flex items-center justify-center min-h-100">
           <PortalUploader className="p-0 scale-75 sm:scale-100" />
         </div>
       </motion.div>
@@ -66,16 +66,16 @@ export function Showcase() {
       {/* Accordion */}
       <motion.div
         variants={itemVariants}
-        className="md:col-span-5 group relative overflow-hidden rounded-[2.5rem] border border-zinc-800 bg-zinc-900/20 p-8 shadow-2xl backdrop-blur-sm"
+        className="md:col-span-5 group relative overflow-hidden rounded-[2.5rem] border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/20 p-8 shadow-2xl backdrop-blur-sm transition-colors duration-500"
       >
-        <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-950/50 border border-zinc-800 text-[8px] font-black uppercase tracking-widest text-zinc-500 mb-4 w-fit">
+        <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 text-[8px] font-black uppercase tracking-widest text-zinc-500 mb-4 w-fit">
           <Layout size={10} /> Structure
         </div>
-        <h3 className="text-xl font-black tracking-tight mb-6">
+        <h3 className="text-xl font-black tracking-tight mb-6 text-zinc-900 dark:text-zinc-50">
           Tactile Accordion
         </h3>
         <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="i1" className="border-zinc-800">
+          <AccordionItem value="i1" className="border-zinc-200 dark:border-zinc-800">
             <AccordionTrigger className="text-sm">
               Design Philosophy
             </AccordionTrigger>
@@ -83,7 +83,7 @@ export function Showcase() {
               Focus on low-level primitives for maximum control and performance.
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="i2" className="border-zinc-800">
+          <AccordionItem value="i2" className="border-zinc-200 dark:border-zinc-800">
             <AccordionTrigger className="text-sm">
               Motion Engineering
             </AccordionTrigger>
@@ -97,13 +97,13 @@ export function Showcase() {
       {/* Magnetic Dock */}
       <motion.div
         variants={itemVariants}
-        className="md:col-span-7 group relative overflow-hidden rounded-[2.5rem] border border-zinc-800 bg-zinc-900/20 flex flex-col items-center justify-center p-12 shadow-2xl backdrop-blur-sm"
+        className="md:col-span-7 group relative overflow-hidden rounded-[2.5rem] border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/20 flex flex-col items-center justify-center p-12 shadow-2xl backdrop-blur-sm transition-colors duration-500"
       >
         <div className="absolute top-8 left-8">
-          <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-950/50 border border-zinc-800 text-[8px] font-black uppercase tracking-widest text-zinc-500 mb-2 w-fit">
+          <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 text-[8px] font-black uppercase tracking-widest text-zinc-500 mb-2 w-fit">
             <MousePointer2 size={10} /> Proximity
           </div>
-          <h3 className="text-xl font-black tracking-tight">Magnetic Dock</h3>
+          <h3 className="text-xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">Magnetic Dock</h3>
         </div>
         <div className="mt-8 scale-90 sm:scale-100">
           <MagneticDock magnification={80} distance={140} />
@@ -113,14 +113,14 @@ export function Showcase() {
       {/* Rich Button showcase */}
       <motion.div
         variants={itemVariants}
-        className="md:col-span-12 group relative overflow-hidden rounded-[2.5rem] border border-zinc-800 bg-zinc-900/20 p-10 shadow-2xl backdrop-blur-sm"
+        className="md:col-span-12 group relative overflow-hidden rounded-[2.5rem] border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/20 p-10 shadow-2xl backdrop-blur-sm transition-colors duration-500"
       >
         <div className="flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="text-center md:text-left">
-            <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-zinc-950/50 border border-zinc-800 text-[8px] font-black uppercase tracking-widest text-zinc-500 mb-2 w-fit mx-auto md:mx-0">
+            <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-white dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800 text-[8px] font-black uppercase tracking-widest text-zinc-500 mb-2 w-fit mx-auto md:mx-0">
               <Zap size={10} /> Varieties
             </div>
-            <h3 className="text-2xl font-black tracking-tight mb-2">
+            <h3 className="text-2xl font-black tracking-tight mb-2 text-zinc-900 dark:text-zinc-50">
               3D Rich Buttons
             </h3>
             <p className="text-zinc-500 text-sm font-medium italic">
