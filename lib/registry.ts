@@ -7,9 +7,9 @@ export function getComponentCode(name: string): string | null {
   // Try to find the component in the registry
   // The name passed might be 'orbit-button' or 'rich-button'
   // We need to check if orbit-button.tsx exists
-  
+
   const fullPath = path.join(REGISTRY_PATH, `${name}.tsx`);
-  
+
   if (!fs.existsSync(fullPath)) {
     // Check if it's in a subfolder like registry/klarden-ui/ui/name.tsx
     const uiPath = path.join(REGISTRY_PATH, "ui", `${name}.tsx`);

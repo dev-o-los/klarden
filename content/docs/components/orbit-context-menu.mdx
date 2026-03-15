@@ -46,25 +46,25 @@ export default function App() {
 
 ## Properties
 
-<PropsTable
-  items={[
-    {
-      name: "children",
-      type: "ReactNode",
-      default: "—",
-      description: "The content that will trigger the context menu.",
-    },
-    {
-      name: "actions",
-      type: "Action[]",
-      default: "defaultActions",
-      description: "Custom actions to display in the radial arc.",
-    },
-    {
-      name: "className",
-      type: "string",
-      default: "—",
-      description: "Additional CSS classes for the wrapper.",
-    },
-  ]}
-/>
+export const properties = [
+  {
+    name: "children",
+    type: "ReactNode",
+    default: "—",
+    description: "The content that will trigger the context menu.",
+  },
+  {
+    name: "actions",
+    type: "Action[]",
+    default: "defaultActions",
+    description: "Custom actions to display in the radial arc.",
+  },
+  {
+    name: "className",
+    type: "string",
+    default: "—",
+    description: "Additional CSS classes for the wrapper.",
+  },
+];
+
+<PropsTable items={properties} />

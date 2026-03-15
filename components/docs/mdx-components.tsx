@@ -3,8 +3,8 @@ import { registry } from "@/registry/components";
 import React from "react";
 import { CodeBlock } from "./code-block";
 import { ComponentPreview } from "./component-preview";
-import { PropsTable, type PropsTableProps } from "./props-table";
 import { InstallBlock } from "./install-block";
+import { PropsTable, type PropsTableItem } from "./props-table";
 
 type ComponentProps = React.HTMLAttributes<HTMLElement>;
 
@@ -22,15 +22,13 @@ interface ComponentPreviewWrapperProps {
 
 export const mdxComponents = {
   // Define documentation components with explicit prop passing
-  PropsTable: ({ items, className }: PropsTableProps) => (
-    <PropsTable items={items} className={className} />
-  ),
   ComponentPreview: ({ name, children }: ComponentPreviewWrapperProps) => (
     <ComponentPreview name={name} usageCode={children} />
   ),
   InstallBlock: (props: { command: string }) => <InstallBlock {...props} />,
+  PropsTable: (props: { items: PropsTableItem[] }) => <PropsTable {...props} />,
 
-  // Spread registry components
+  // Spread registry components (dynamic imports from @/registry/components)
   ...registry,
 
   h1: ({ className, ...props }: ComponentProps) => (
@@ -78,7 +76,7 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  // Premium Table Styling
+  // Premium Table Styling (Generic Markdown tables)
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="my-6 w-full overflow-y-auto rounded-xl border border-zinc-200 dark:border-zinc-800">
       <table

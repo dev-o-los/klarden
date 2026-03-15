@@ -47,31 +47,31 @@ export default function App() {
 
 ## Properties
 
-<PropsTable
-  items={[
-    {
-      name: "items",
-      type: "DockItem[]",
-      default: "defaultItems",
-      description: "Array of items with icons and labels.",
-    },
-    {
-      name: "magnification",
-      type: "number",
-      default: "80",
-      description: "Maximum size of the icon when centered.",
-    },
-    {
-      name: "distance",
-      type: "number",
-      default: "140",
-      description: "The range of the magnetic effect in pixels.",
-    },
-    {
-      name: "className",
-      type: "string",
-      default: "—",
-      description: "Additional CSS classes for the dock.",
-    },
-  ]}
-/>
+export const properties = [
+  {
+    name: "items",
+    type: "DockItem[]",
+    default: "defaultItems",
+    description: "Array of items with icons and labels.",
+  },
+  {
+    name: "magnification",
+    type: "number",
+    default: "80",
+    description: "Maximum size of the icon when centered.",
+  },
+  {
+    name: "distance",
+    type: "number",
+    default: "140",
+    description: "The range of the magnetic effect in pixels.",
+  },
+  {
+    name: "className",
+    type: "string",
+    default: "—",
+    description: "Additional CSS classes for the dock.",
+  },
+];
+
+<PropsTable items={properties} />

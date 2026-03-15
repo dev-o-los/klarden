@@ -45,25 +45,25 @@ export default function App() {
 
 ## Properties
 
-<PropsTable
-  items={[
-    {
-      name: "onUpload",
-      type: "(file: File) => void",
-      default: "—",
-      description: "Callback triggered when a file is successfully dropped.",
-    },
-    {
-      name: "accept",
-      type: "string",
-      default: "—",
-      description: 'Accepted file types (e.g., "image/*").',
-    },
-    {
-      name: "className",
-      type: "string",
-      default: "—",
-      description: "Additional CSS classes for the container.",
-    },
-  ]}
-/>
+export const properties = [
+  {
+    name: "onUpload",
+    type: "(file: File) => void",
+    default: "—",
+    description: "Callback triggered when a file is successfully dropped.",
+  },
+  {
+    name: "accept",
+    type: "string",
+    default: "—",
+    description: 'Accepted file types (e.g., "image/*").',
+  },
+  {
+    name: "className",
+    type: "string",
+    default: "—",
+    description: "Additional CSS classes for the container.",
+  },
+];
+
+<PropsTable items={properties} />
