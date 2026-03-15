@@ -63,7 +63,7 @@ export const mdxComponents = {
   p: ({ className, ...props }: ComponentProps) => (
     <p
       className={cn(
-        "leading-7 [&:not(:first-child)]:mt-6 text-zinc-600 dark:text-zinc-400",
+        "leading-7 not-first:mt-6 text-zinc-600 dark:text-zinc-400",
         className,
       )}
       {...props}
@@ -140,7 +140,7 @@ export const mdxComponents = {
         className,
       )}
     >
-      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-zinc-900 dark:bg-zinc-50 shadow-lg" />
+      <div className="absolute -left-2.25 top-0 w-4 h-4 rounded-full bg-zinc-900 dark:bg-zinc-50 shadow-lg" />
       {props.children}
     </div>
   ),
