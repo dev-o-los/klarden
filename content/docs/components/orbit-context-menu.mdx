@@ -1,0 +1,68 @@
+---
+title: Orbit Context Menu
+description: A premium radial context menu with neumorphic styling and smooth animations.
+category: Components
+---
+
+The OrbitContextMenu is a wrapper component that overrides the default browser context menu with a premium radial interface. It fanned out secondary actions in a 180-degree arc around the cursor.
+
+## Preview
+
+<ComponentPreview name="orbit-context-menu">
+```tsx
+import { OrbitContextMenu } from "@/registry/klarden-ui/orbit-context-menu";
+
+export default function Example() {
+  return (
+    <OrbitContextMenu className="h-48 w-full border-2 border-dashed flex items-center justify-center rounded-3xl">
+      <span className="text-zinc-500 font-bold uppercase tracking-widest">
+        Right-click here
+      </span>
+    </OrbitContextMenu>
+  );
+}
+```
+</ComponentPreview>
+
+## Usage
+
+### Installation
+
+<InstallBlock command="shadcn add https://klarden-ui.com/r/orbit-context-menu.json" />
+
+### Basic Example
+
+```tsx
+import { OrbitContextMenu } from "@/registry/klarden-ui/orbit-context-menu";
+
+export default function App() {
+  return (
+    <OrbitContextMenu>
+      <div className="p-20">Right-click trigger zone</div>
+    </OrbitContextMenu>
+  );
+}
+```
+
+## Properties
+
+<PropsTable>
+  <Prop
+    name="children"
+    type="ReactNode"
+    default="—"
+    description="The content that will trigger the context menu."
+  />
+  <Prop
+    name="actions"
+    type="Action[]"
+    default="defaultActions"
+    description="Custom actions to display in the radial arc."
+  />
+  <Prop
+    name="className"
+    type="string"
+    default="—"
+    description="Additional CSS classes for the wrapper."
+  />
+</PropsTable>

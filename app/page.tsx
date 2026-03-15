@@ -4,9 +4,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/registry/klarden-ui/accordion";
-import OrbitContextMenu from "@/registry/klarden-ui/orbit-context-menu";
+import { OrbitContextMenu } from "@/registry/klarden-ui/orbit-context-menu";
 import { RichButton } from "@/registry/klarden-ui/rich-button";
 import { Cpu, Github, Shield, Terminal, Zap } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -28,10 +29,14 @@ export default function Home() {
             Fluid motion, tactile feedback, and seamless theme support.
           </p>
           <div className="flex items-center justify-center gap-4">
-            <RichButton size="sm">Get Started</RichButton>
-            <RichButton color="teal" size="sm" className="gap-2">
-              <Github size={14} /> Documentation
-            </RichButton>
+            <Link href="/docs/introduction">
+              <RichButton size="sm" color="blue">Get Started</RichButton>
+            </Link>
+            <Link href="https://github.com/dev-o-los/klarden-ui" target="_blank">
+              <RichButton color="teal" size="sm" className="gap-2">
+                <Github size={14} /> GitHub
+              </RichButton>
+            </Link>
           </div>
         </header>
 

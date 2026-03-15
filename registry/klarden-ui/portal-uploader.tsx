@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
-import { Check, File as FileIcon, Upload, X } from "lucide-react";
+import { Check, File as FileIcon, Upload } from "lucide-react";
 import React, { useCallback, useState } from "react";
 
 interface FileState {
@@ -26,60 +26,70 @@ export const PortalUploader: React.FC<PortalUploaderProps> = ({
   const [currentFile, setCurrentFile] = useState<FileState | null>(null);
   const ringControls = useAnimation();
 
-  const handleDragOver = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (!isDragging) {
-      setIsDragging(true);
-      ringControls.start({
-        rotate: 360,
-        transition: { duration: 2, repeat: Infinity, ease: "linear" },
-      });
-    }
-  }, [isDragging, ringControls]);
-
-  const handleDragLeave = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragging(false);
-    ringControls.stop();
-  }, [ringControls]);
-
-  const simulateUpload = (file: File) => {
-    setCurrentFile({ file, progress: 0, status: "uploading" });
-    
-    let progress = 0;
-    const interval = setInterval(() => {
-      progress += Math.random() * 30;
-      if (progress >= 100) {
-        progress = 100;
-        clearInterval(interval);
-        setCurrentFile((prev) => 
-          prev ? { ...prev, progress: 100, status: "completed" } : null
-        );
-        onUpload?.(file);
-        
-        // Reset after success
-        setTimeout(() => setCurrentFile(null), 2000);
-      } else {
-        setCurrentFile((prev) => 
-          prev ? { ...prev, progress } : null
-        );
+  const handleDragOver = useCallback(
+    (e: React.DragEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!isDragging) {
+        setIsDragging(true);
+        ringControls.start({
+          rotate: 360,
+          transition: { duration: 2, repeat: Infinity, ease: "linear" },
+        });
       }
-    }, 400);
-  };
+    },
+    [isDragging, ringControls],
+  );
 
-  const handleDrop = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragging(false);
-    ringControls.stop();
+  const handleDragLeave = useCallback(
+    (e: React.DragEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setIsDragging(false);
+      ringControls.stop();
+    },
+    [ringControls],
+  );
 
-    const files = e.dataTransfer.files;
-    if (files && files.length > 0) {
-      simulateUpload(files[0]);
-    }
-  }, [ringControls]);
+  const simulateUpload = useCallback(
+    (file: File) => {
+      setCurrentFile({ file, progress: 0, status: "uploading" });
+
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += Math.random() * 30;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(interval);
+          setCurrentFile((prev) =>
+            prev ? { ...prev, progress: 100, status: "completed" } : null,
+          );
+          onUpload?.(file);
+
+          // Reset after success
+          setTimeout(() => setCurrentFile(null), 2000);
+        } else {
+          setCurrentFile((prev) => (prev ? { ...prev, progress } : null));
+        }
+      }, 400);
+    },
+    [onUpload],
+  );
+
+  const handleDrop = useCallback(
+    (e: React.DragEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setIsDragging(false);
+      ringControls.stop();
+
+      const files = e.dataTransfer.files;
+      if (files && files.length > 0) {
+        simulateUpload(files[0]);
+      }
+    },
+    [ringControls, simulateUpload],
+  );
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -88,7 +98,12 @@ export const PortalUploader: React.FC<PortalUploaderProps> = ({
   };
 
   return (
-    <div className={cn("relative flex items-center justify-center p-20", className)}>
+    <div
+      className={cn(
+        "relative flex items-center justify-center p-20",
+        className,
+      )}
+    >
       <input
         type="file"
         id="portal-upload"
@@ -96,7 +111,7 @@ export const PortalUploader: React.FC<PortalUploaderProps> = ({
         accept={accept}
         onChange={handleFileChange}
       />
-      
+
       <label
         htmlFor="portal-upload"
         onDragOver={handleDragOver}
@@ -110,9 +125,9 @@ export const PortalUploader: React.FC<PortalUploaderProps> = ({
           initial={{ rotate: 0 }}
           className={cn(
             "absolute w-48 h-48 border-2 border-dotted rounded-full transition-colors duration-300",
-            isDragging 
-              ? "border-zinc-400 dark:border-zinc-500 scale-110" 
-              : "border-zinc-200 dark:border-zinc-800 scale-100"
+            isDragging
+              ? "border-zinc-400 dark:border-zinc-500 scale-110"
+              : "border-zinc-200 dark:border-zinc-800 scale-100",
           )}
         />
 
@@ -125,7 +140,7 @@ export const PortalUploader: React.FC<PortalUploaderProps> = ({
           transition={{ repeat: Infinity, duration: 1.5 }}
           className={cn(
             "relative z-10 w-32 h-32 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full flex flex-col items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.5)] transition-all duration-300",
-            isDragging && "shadow-2xl border-zinc-300 dark:border-zinc-700"
+            isDragging && "shadow-2xl border-zinc-300 dark:border-zinc-700",
           )}
         >
           <AnimatePresence mode="wait">
@@ -137,11 +152,13 @@ export const PortalUploader: React.FC<PortalUploaderProps> = ({
                 exit={{ opacity: 0, y: -10 }}
                 className="flex flex-col items-center"
               >
-                <Upload 
+                <Upload
                   className={cn(
                     "w-8 h-8 mb-2 transition-colors duration-300",
-                    isDragging ? "text-zinc-900 dark:text-zinc-100" : "text-zinc-400 dark:text-zinc-500"
-                  )} 
+                    isDragging
+                      ? "text-zinc-900 dark:text-zinc-100"
+                      : "text-zinc-400 dark:text-zinc-500",
+                  )}
                 />
                 <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">
                   Drop File
@@ -174,15 +191,18 @@ export const PortalUploader: React.FC<PortalUploaderProps> = ({
                     fill="transparent"
                     strokeDasharray="251.2"
                     initial={{ strokeDashoffset: 251.2 }}
-                    animate={{ strokeDashoffset: 251.2 - (251.2 * currentFile.progress) / 100 }}
+                    animate={{
+                      strokeDashoffset:
+                        251.2 - (251.2 * currentFile.progress) / 100,
+                    }}
                     className="text-zinc-900 dark:text-zinc-100"
                   />
                 </svg>
                 <div className="absolute flex flex-col items-center">
-                   <FileIcon className="w-6 h-6 text-zinc-400 mb-1" />
-                   <span className="text-[10px] font-bold text-zinc-900 dark:text-zinc-100">
+                  <FileIcon className="w-6 h-6 text-zinc-400 mb-1" />
+                  <span className="text-[10px] font-bold text-zinc-900 dark:text-zinc-100">
                     {Math.round(currentFile.progress)}%
-                   </span>
+                  </span>
                 </div>
               </motion.div>
             ) : (
@@ -210,8 +230,8 @@ export const PortalUploader: React.FC<PortalUploaderProps> = ({
               exit={{ opacity: 0, y: 20 }}
               className="absolute bottom-0 px-3 py-1 bg-zinc-950 dark:bg-zinc-50 text-zinc-50 dark:text-zinc-950 text-[9px] font-black uppercase tracking-widest rounded-md shadow-2xl z-20"
             >
-              {currentFile.file.name.length > 20 
-                ? currentFile.file.name.substring(0, 20) + "..." 
+              {currentFile.file.name.length > 20
+                ? currentFile.file.name.substring(0, 20) + "..."
                 : currentFile.file.name}
             </motion.div>
           )}

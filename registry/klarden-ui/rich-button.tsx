@@ -149,4 +149,18 @@ const RichButton = React.forwardRef<HTMLButtonElement, RichButtonProps>(
 
 RichButton.displayName = "RichButton";
 
-export { RichButton };
+const RichButtonDemo = () => {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <RichButton color="default">Default</RichButton>
+      <RichButton color="blue">Blue</RichButton>
+      <RichButton color="purple">Purple</RichButton>
+      <RichButton color="emerald">Emerald</RichButton>
+      <RichButton color="rose">Rose</RichButton>
+      <RichButton color="amber">Amber</RichButton>
+    </div>
+  );
+};
+
+export { RichButton, RichButtonDemo };
+export default RichButtonDemo;

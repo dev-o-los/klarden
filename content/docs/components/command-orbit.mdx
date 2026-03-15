@@ -1,0 +1,73 @@
+---
+title: Command Orbit
+description: A premium radial command menu with orbiting actions and physics-based motion.
+category: Components
+---
+
+The CommandOrbit is a sophisticated interaction hub. It features a central trigger that, when clicked, expands a set of secondary actions in a radial pattern with staggered entrance animations.
+
+## Preview
+
+<ComponentPreview name="command-orbit">
+```tsx
+import { CommandOrbit } from "@/registry/klarden-ui/command-orbit";
+import { MessageSquare, Share2, Mail, Settings } from "lucide-react";
+
+export default function Example() {
+  const actions = [
+    { icon: MessageSquare, label: "Chat", color: "text-blue-500" },
+    { icon: Share2, label: "Share", color: "text-purple-500" },
+    { icon: Mail, label: "Email", color: "text-rose-500" },
+    { icon: Settings, label: "Config", color: "text-zinc-500" },
+  ];
+
+return <CommandOrbit actions={actions} radius={100} />;
+}
+
+````
+</ComponentPreview>
+
+## Usage
+
+### Installation
+
+<InstallBlock command="shadcn add https://klarden-ui.com/r/command-orbit.json" />
+
+### Basic Example
+
+```tsx
+import { CommandOrbit } from "@/registry/klarden-ui/command-orbit";
+
+export default function App() {
+  return <CommandOrbit radius={80} />;
+}
+````
+
+## Properties
+
+<PropsTable>
+  <Prop
+    name="actions"
+    type="OrbitAction[]"
+    default="defaultActions"
+    description="Array of actions to display in the orbit."
+  />
+  <Prop
+    name="radius"
+    type="number"
+    default="80"
+    description="The distance from the center to the orbiting items."
+  />
+  <Prop
+    name="showLabels"
+    type="boolean"
+    default="true"
+    description="Whether to show tooltips on hover."
+  />
+  <Prop
+    name="className"
+    type="string"
+    default="—"
+    description="Additional CSS classes for the container."
+  />
+</PropsTable>

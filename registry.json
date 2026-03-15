@@ -93,21 +93,6 @@
       "dependencies": ["framer-motion", "lucide-react"],
       "registryDependencies": [],
       "category": "button"
-    },
-    {
-      "name": "orbital-globe",
-      "type": "registry:component",
-      "title": "Orbital Globe",
-      "description": "A minimalist, stylized representation of a rotating Earth with layered animations.",
-      "files": [
-        {
-          "path": "registry/klarden-ui/orbital-globe.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "dependencies": ["framer-motion"],
-      "registryDependencies": [],
-      "category": "other"
     }
   ]
 }

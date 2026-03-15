@@ -1,0 +1,75 @@
+---
+title: Magnetic Dock
+description: A bottom-docked navigation bar with proximity-based magnification effects.
+category: Components
+---
+
+The MagneticDock provides a premium navigation experience inspired by desktop operating systems. Icons expand and "lean" towards the user's cursor based on proximity using high-performance physics.
+
+## Preview
+
+<ComponentPreview name="magnetic-dock">
+```tsx
+import { MagneticDock } from "@/registry/klarden-ui/magnetic-dock";
+
+export default function Example() {
+  return (
+    <div className="flex items-center justify-center h-48">
+      <MagneticDock />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+## Usage
+
+### Installation
+
+<InstallBlock command="shadcn add https://klarden-ui.com/r/magnetic-dock.json" />
+
+### Custom Items
+
+```tsx
+import { MagneticDock } from "@/registry/klarden-ui/magnetic-dock";
+import { Home, Search, Settings } from "lucide-react";
+
+const items = [
+  { icon: Home, label: "Home", onClick: () => console.log("home") },
+  { icon: Search, label: "Search" },
+  { icon: Settings, label: "Settings" },
+];
+
+export default function App() {
+  return <MagneticDock items={items} magnification={80} distance={140} />;
+}
+```
+
+## Properties
+
+<PropsTable>
+  <Prop
+    name="items"
+    type="DockItem[]"
+    default="defaultItems"
+    description="Array of items with icons and labels."
+  />
+  <Prop
+    name="magnification"
+    type="number"
+    default="80"
+    description="Maximum size of the icon when centered."
+  />
+  <Prop
+    name="distance"
+    type="number"
+    default="140"
+    description="The range of the magnetic effect in pixels."
+  />
+  <Prop
+    name="className"
+    type="string"
+    default="—"
+    description="Additional CSS classes for the dock."
+  />
+</PropsTable>

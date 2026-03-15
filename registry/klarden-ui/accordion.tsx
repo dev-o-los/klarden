@@ -98,4 +98,39 @@ const AccordionContent = React.forwardRef<
 ));
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
-export { Accordion, AccordionContent, AccordionItem, AccordionTrigger };
+const AccordionDemo = () => {
+  return (
+    <Accordion type="single" collapsible className="w-full max-w-md">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Is it animated?</AccordionTrigger>
+        <AccordionContent>
+          Yes. It uses Framer Motion for smooth, spring-based transitions and
+          magnetic text effects on hover.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionContent>
+          Yes. It is built on top of Radix UI accessible primitives, supporting
+          keyboard navigation and screen readers.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Can I customize it?</AccordionTrigger>
+        <AccordionContent>
+          Absolutely. The component is built with Tailwind CSS and Framer
+          Motion, making it easy to tweak colors, animations, and layouts.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  );
+};
+
+export {
+  Accordion,
+  AccordionContent,
+  AccordionDemo,
+  AccordionItem,
+  AccordionTrigger,
+};
+export default AccordionDemo;

@@ -132,3 +132,11 @@ export const MagneticDock = ({
     </motion.div>
   );
 };
+
+const MagneticDockDemo = () => {
+  return (
+    <MagneticDock />
+  );
+};
+
+export default MagneticDockDemo;

@@ -1,0 +1,90 @@
+---
+title: Accordion
+description: A premium accordion component with smooth transitions and magnetic text effects.
+category: Components
+---
+
+The Accordion component allows users to toggle the visibility of sections of content. It features a physics-based opening animation and subtle magnetic text effects on hover.
+
+## Preview
+
+<ComponentPreview name="accordion">
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/registry/klarden-ui/accordion";
+
+export default function Example() {
+  return (
+    <Accordion type="single" collapsible className="w-full max-w-md">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Is it animated?</AccordionTrigger>
+        <AccordionContent>
+          Yes. It uses Framer Motion for smooth, spring-based transitions.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionContent>
+          Yes. It is built on top of Radix UI's accessible primitives.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  );
+}
+```
+</ComponentPreview>
+
+## Usage
+
+### Installation
+
+<InstallBlock command="shadcn add https://klarden-ui.com/r/accordion.json" />
+
+### Basic Example
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/registry/klarden-ui/accordion";
+
+export default function App() {
+  return (
+    <Accordion type="single" collapsible>
+      <AccordionItem value="1">
+        <AccordionTrigger>Title</AccordionTrigger>
+        <AccordionContent>Content goes here.</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  );
+}
+```
+
+## Properties
+
+<PropsTable>
+  <Prop
+    name="type"
+    type='"single" | "multiple"'
+    default="—"
+    description="Determines if one or multiple items can be open."
+  />
+  <Prop
+    name="collapsible"
+    type="boolean"
+    default="false"
+    description="Whether an open item can be closed by clicking its trigger."
+  />
+  <Prop
+    name="className"
+    type="string"
+    default="—"
+    description="Additional CSS classes for the root container."
+  />
+</PropsTable>
