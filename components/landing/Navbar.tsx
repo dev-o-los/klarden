@@ -27,11 +27,6 @@ export function Navbar() {
             >
               Components
             </Link>
-            <Link href="/test">
-              <span className="text-zinc-400 hover:text-zinc-100 transition-colors cursor-pointer">
-                Labs
-              </span>
-            </Link>
           </div>
         </div>
         <div className="flex items-center gap-4">
