@@ -64,7 +64,7 @@ export function Hero() {
             color="blue"
             className="rounded-full h-11 px-8 text-sm font-semibold tracking-tight gap-2"
           >
-            <Layout size={16} /> Components
+            <Layout size={16} className="mr-2" /> Components
           </RichButton>
         </Link>
       </motion.div>
