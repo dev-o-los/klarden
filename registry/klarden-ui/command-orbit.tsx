@@ -297,9 +297,7 @@ export function CommandOrbit({
 
 const CommandOrbitDemo = () => {
   return (
-    <div className="flex items-center justify-center w-full min-h-[300px] bg-zinc-50/50 dark:bg-zinc-900/20 rounded-3xl border-2 border-dashed border-zinc-200 dark:border-zinc-800">
-      <CommandOrbit />
-    </div>
+    <CommandOrbit radius={100} />
   );
 };
 

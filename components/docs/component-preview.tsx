@@ -25,7 +25,7 @@ export function ComponentPreview({ name, usageCode }: ComponentPreviewProps) {
   };
 
   return (
-    <div className="relative my-12 group">
+    <div className="relative my-12">
       {/* Tabs Header */}
       <div className="flex items-center justify-between pb-4">
         <div className="flex gap-1 p-1 bg-zinc-100 dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800">
@@ -57,7 +57,7 @@ export function ComponentPreview({ name, usageCode }: ComponentPreviewProps) {
 
         <button
           onClick={copyToClipboard}
-          className="p-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300 transition-all active:scale-95 shadow-sm"
+          className="p-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300 transition-all active:scale-95"
         >
           {copied ? (
             <Check size={16} className="text-emerald-500" />
@@ -68,7 +68,7 @@ export function ComponentPreview({ name, usageCode }: ComponentPreviewProps) {
       </div>
 
       {/* Content Area */}
-      <div className="mt-2 min-h-[400px] rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950/50 flex items-center justify-center overflow-hidden shadow-xl shadow-zinc-200/20 dark:shadow-none">
+      <div className="mt-2 min-h-[400px] rounded-[2rem] border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950/50 flex items-center justify-center overflow-hidden shadow-sm shadow-zinc-200/20 dark:shadow-none">
         <AnimatePresence mode="wait">
           {tab === "preview" ? (
             <motion.div
