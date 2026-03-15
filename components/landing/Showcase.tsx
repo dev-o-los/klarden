@@ -58,7 +58,7 @@ export function Showcase() {
           </div>
           <h3 className="text-xl font-black tracking-tight">Uploader</h3>
         </div>
-        <div className="flex items-center justify-center min-h-[400px]">
+        <div className="flex items-center justify-center min-h-100">
           <PortalUploader className="p-0 scale-75 sm:scale-100" />
         </div>
       </motion.div>
