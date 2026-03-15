@@ -36,7 +36,7 @@ export const mdxComponents = {
   h1: ({ className, ...props }: ComponentProps) => (
     <h1
       className={cn(
-        "mt-2 scroll-m-20 text-4xl font-black tracking-tighter text-zinc-900 dark:text-zinc-50",
+        "mt-2 scroll-m-20 text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50",
         className,
       )}
       {...props}
@@ -45,7 +45,7 @@ export const mdxComponents = {
   h2: ({ className, ...props }: ComponentProps) => (
     <h2
       className={cn(
-        "mt-12 scroll-m-20 border-b border-zinc-200 dark:border-zinc-800 pb-2 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 first:mt-0",
+        "mt-12 scroll-m-20 border-b border-zinc-200 dark:border-zinc-800 pb-2 text-2xl font-semibold tracking-wide text-zinc-900 dark:text-zinc-50 first:mt-0",
         className,
       )}
       {...props}
@@ -54,7 +54,7 @@ export const mdxComponents = {
   h3: ({ className, ...props }: ComponentProps) => (
     <h3
       className={cn(
-        "mt-8 scroll-m-20 text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50",
+        "mt-8 scroll-m-20 text-xl font-semibold tracking-wide text-zinc-900 dark:text-zinc-50",
         className,
       )}
       {...props}

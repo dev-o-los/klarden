@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
 import { RichButton } from "@/registry/klarden-ui/rich-button";
+import { motion } from "framer-motion";
 import { ArrowRight, Layout } from "lucide-react";
 import Link from "next/link";
 
@@ -27,7 +26,9 @@ export function Hero() {
           className="text-4xl md:text-6xl font-medium tracking-tight leading-[1.1] text-zinc-50"
         >
           Refined UI components for <br />
-          <span className="font-serif italic text-zinc-400">modern interfaces</span>
+          <span className="font-serif italic text-zinc-400">
+            modern interfaces
+          </span>
         </motion.h1>
 
         <motion.p
@@ -36,7 +37,8 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           className="mx-auto max-w-2xl text-zinc-400 text-base md:text-lg font-medium leading-relaxed tracking-tight"
         >
-          An ecosystem of high-end React components. <br className="hidden md:block" />
+          An ecosystem of high-end React components.{" "}
+          <br className="hidden md:block" />
           Engineered with precision motion and tactile feedback.
         </motion.p>
       </div>
@@ -48,12 +50,20 @@ export function Hero() {
         className="flex flex-wrap items-center justify-center gap-5 pt-4"
       >
         <Link href="/docs/introduction">
-          <RichButton size="default" color="default" className="rounded-full h-11 px-8 text-sm font-semibold tracking-tight border-zinc-700">
+          <RichButton
+            size="default"
+            color="default"
+            className="rounded-full h-11 px-8 text-sm font-semibold tracking-tight border-zinc-700"
+          >
             Get Started <ArrowRight size={16} className="ml-2" />
           </RichButton>
         </Link>
         <Link href="/docs/components/accordion">
-          <RichButton size="default" color="blue" className="rounded-full h-11 px-8 text-sm font-semibold tracking-tight gap-2">
+          <RichButton
+            size="default"
+            color="blue"
+            className="rounded-full h-11 px-8 text-sm font-semibold tracking-tight gap-2"
+          >
             <Layout size={16} /> Components
           </RichButton>
         </Link>

@@ -1,37 +1,52 @@
 ---
 title: Introduction
-description: Welcome to the Klarden UI documentation. Build premium animated interfaces with ease.
+description: Welcome to Klarden UI — a premium collection of animated components for high-end interfaces.
 category: Getting Started
 ---
 
-Klarden UI is a collection of high-end, tactile components designed for modern web applications. Every component is built with a focus on **physics-first motion**, **minimalist aesthetics**, and **strict type safety**.
+Klarden UI is an ecosystem of high-quality React components designed with fluid motion and tactile precision. Built for modern design engineers, it prioritizes physics-based animations over traditional duration-fixed easings.
 
-## Philosophy
+## Core Principles
 
-Our design language is rooted in "Minimalist Neumorphism". We combine clean, sharp borders with subtle, layered shadows to create interfaces that feel physical and responsive to touch and hover.
+- **Tactile Feedback:** Every interaction should feel physical. We use spring physics to mimic real-world inertia and momentum.
+- **Low-Level Primitives:** Components are designed to be composable. We provide the building blocks, you orchestrate the experience.
+- **Type-First Design:** Full TypeScript support ensures that your IDE becomes your best documentation.
+- **Copy & Paste:** No complex npm packages. Use the registry CLI to add only what you need to your project.
 
-## Quick Start
+## How it works
 
-### Install Dependencies
+Klarden UI follows the standard "Registry Pattern" popularized by Shadcn UI. Instead of installing a massive library, you "add" individual components directly into your source code.
 
-Install the core animation and utility libraries.
+### 1. Requirements
+
+Ensure you have the following dependencies installed in your project:
 
 ```bash
 pnpm add framer-motion lucide-react clsx tailwind-merge
 ```
 
-### Configure Tailwind
+### 2. Installation
 
-Add the Klarden UI color palette and animations to your `tailwind.config.ts`.
+Use our registry to download a component. For example, to add the Accordion:
 
-### Import Components
+<InstallBlock command="shadcn add https://klarden-ui.com/r/accordion.json" />
 
-Start using premium components in your project.
+### 3. Import Logic
+
+Once a component is added, it will be placed in your `@/components/klarden-ui` folder (or your configured components path).
+
+**Important:** You should import components from your local directory, not from the registry.
 
 ```tsx
-import { CommandOrbit } from "@/registry/klarden-ui/command-orbit";
+// Correct import pattern after installation
+import { 
+  Accordion, 
+  AccordionItem, 
+  AccordionTrigger, 
+  AccordionContent 
+} from "@/components/klarden-ui/accordion";
 ```
 
-## Component Registry
+## Community & Contribution
 
-Klarden UI uses a registry-based distribution system. You can add components directly to your project using the shadcn CLI or by copying the source code from these docs.
+Klarden UI is built by and for design-conscious engineers. If you have an idea for a new tactile module or want to improve an existing one, feel free to contribute to our GitHub repository.

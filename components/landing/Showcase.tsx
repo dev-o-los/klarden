@@ -42,7 +42,7 @@ export function Showcase() {
           </div>
           <h3 className="text-xl font-black tracking-tight">Command Orbit</h3>
         </div>
-        <div className="flex items-center justify-center min-h-[400px]">
+        <div className="flex items-center justify-center min-h-100">
           <CommandOrbit radius={100} />
         </div>
       </motion.div>

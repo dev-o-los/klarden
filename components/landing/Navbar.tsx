@@ -1,7 +1,5 @@
-import React from "react";
-import Link from "next/link";
 import { Github, Layers, Search } from "lucide-react";
-import { RichButton } from "@/registry/klarden-ui/rich-button";
+import Link from "next/link";
 
 export function Navbar() {
   return (
@@ -17,10 +15,22 @@ export function Navbar() {
             </span>
           </Link>
           <div className="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-zinc-500">
-            <Link href="/docs" className="hover:text-zinc-100 transition-colors">Docs</Link>
-            <Link href="/docs/components/accordion" className="hover:text-zinc-100 transition-colors">Components</Link>
+            <Link
+              href="/docs/introduction"
+              className="hover:text-zinc-100 transition-colors"
+            >
+              Docs
+            </Link>
+            <Link
+              href="/docs/components/accordion"
+              className="hover:text-zinc-100 transition-colors"
+            >
+              Components
+            </Link>
             <Link href="/test">
-               <span className="text-zinc-400 hover:text-zinc-100 transition-colors cursor-pointer">Labs</span>
+              <span className="text-zinc-400 hover:text-zinc-100 transition-colors cursor-pointer">
+                Labs
+              </span>
             </Link>
           </div>
         </div>
@@ -30,9 +40,9 @@ export function Navbar() {
             <span>Search</span>
             <span className="ml-4 opacity-30">⌘K</span>
           </div>
-          <Link 
-            href="https://github.com/dev-o-los/klarden-ui" 
-            target="_blank" 
+          <Link
+            href="https://github.com/dev-o-los/klarden-ui"
+            target="_blank"
             className="p-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-colors text-zinc-400 hover:text-zinc-100"
           >
             <Github size={18} />
