@@ -7,12 +7,12 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <div className="flex flex-col items-center text-center space-y-10 pt-24 pb-20">
+    <div className="flex flex-col items-center text-center space-y-8 pt-20 pb-12 md:pt-28 md:pb-20">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/50 border border-zinc-800/50 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 backdrop-blur-sm"
+        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary border border-border text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground backdrop-blur-sm"
       >
         <div className="h-1 w-1 rounded-full bg-emerald-500" />
         Curated for Design Engineers
@@ -23,10 +23,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="text-4xl md:text-6xl font-medium tracking-tight leading-[1.1] text-zinc-900 dark:text-zinc-50"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1] text-foreground"
         >
           Refined UI components for <br />
-          <span className="font-serif italic text-zinc-500 dark:text-zinc-400">
+          <span className="font-serif italic text-muted-foreground">
             modern interfaces
           </span>
         </motion.h1>
@@ -35,7 +35,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400 text-base md:text-lg font-medium leading-relaxed tracking-tight"
+          className="mx-auto max-w-2xl text-muted-foreground text-base md:text-lg lg:text-xl font-medium leading-relaxed tracking-tight px-4"
         >
           An ecosystem of high-end React components.{" "}
           <br className="hidden md:block" />
@@ -47,13 +47,13 @@ export function Hero() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-        className="flex flex-wrap items-center justify-center gap-5 pt-4"
+        className="flex flex-wrap items-center justify-center gap-4 pt-4"
       >
         <Link href="/docs/introduction">
           <RichButton
             size="default"
             color="default"
-            className="rounded-full h-11 px-8 text-sm font-semibold tracking-tight border-zinc-200 dark:border-zinc-700"
+            className="rounded-full h-11 px-8 text-sm font-semibold tracking-tight border-border"
           >
             Get Started <ArrowRight size={16} className="ml-2" />
           </RichButton>

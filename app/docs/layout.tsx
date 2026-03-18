@@ -11,14 +11,14 @@ export default function DocsLayout({
   const docs = getAllDocs();
 
   return (
-    <div className="flex flex-col min-h-screen bg-zinc-50 dark:bg-zinc-950">
+    <div className="flex flex-col min-h-screen overflow-hidden">
       <Navbar />
 
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="w-full max-w-350 mx-auto px-4 md:px-8">
         <div className="flex flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[240px_minmax(0,1fr)] md:gap-10 lg:gap-16">
           <Sidebar items={docs} />
-          <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_200px]">
-            <div className="mx-auto w-full min-w-0 max-w-3xl">{children}</div>
+          <main className="relative py-6 lg:py-8 w-full min-w-0">
+            <div className="mx-auto w-full min-w-0 max-w-4xl">{children}</div>
           </main>
         </div>
       </div>

@@ -92,7 +92,7 @@ export function ComponentPreview({ name, usageCode }: ComponentPreviewProps) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
-              className="w-full h-full bg-[#24292e] dark:bg-zinc-950"
+              className="w-full h-full bg-zinc-50 dark:bg-zinc-950"
             >
               <div className="p-0 [&>div]:my-0 [&>div]:rounded-none [&>div]:border-none">
                 {usageCode || (

@@ -3,20 +3,26 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Check, Copy } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/constants";
 
 interface InstallBlockProps {
-  command: string; // The base command without the manager (e.g., 'shadcn add registry/...')
+  command: string; // The component name or full command
 }
 
 export function InstallBlock({ command }: InstallBlockProps) {
   const [activeTab, setActiveTab] = useState<"pnpm" | "npm" | "yarn" | "bun">("pnpm");
   const [copied, setCopied] = useState(false);
 
+  // If command is just a component name (e.g. "accordion"), construct the full shadcn command
+  const fullCommand = command.startsWith("shadcn") 
+    ? command.replace("https://klarden-ui.com", SITE_CONFIG.url)
+    : `shadcn add ${SITE_CONFIG.url}/r/${command}.json`;
+
   const managers = {
-    pnpm: `pnpm dlx ${command}`,
-    npm: `npx ${command}`,
-    yarn: `yarn dlx ${command}`,
-    bun: `bun x ${command}`,
+    pnpm: `pnpm dlx ${fullCommand}`,
+    npm: `npx ${fullCommand}`,
+    yarn: `yarn dlx ${fullCommand}`,
+    bun: `bun x ${fullCommand}`,
   };
 
   const copyToClipboard = () => {
