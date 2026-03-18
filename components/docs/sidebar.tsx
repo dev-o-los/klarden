@@ -50,10 +50,10 @@ export function Sidebar({ items }: SidebarProps) {
                     key={doc.slug}
                     href={`/docs/${doc.slug}`}
                     className={cn(
-                      "group flex w-full items-center rounded-md border border-transparent px-2 py-1.5 transition-all",
+                      "group flex w-full items-center rounded-r-md border-l-2 border-transparent px-3 py-1.5 transition-all text-sm",
                       pathname === `/docs/${doc.slug}`
-                        ? "bg-zinc-100 dark:bg-zinc-900 font-bold text-zinc-900 dark:text-zinc-50 shadow-sm"
-                        : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300",
+                        ? "bg-primary/5 border-primary font-bold text-primary"
+                        : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900",
                     )}
                   >
                     {doc.title}
