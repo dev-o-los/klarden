@@ -7,68 +7,64 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <div className="relative flex flex-col items-center text-center space-y-6 pt-16 pb-4 md:pt-24 md:pb-6 overflow-visible">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)] [background-size:40px_40px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-20 opacity-40 pointer-events-none" />
-
+    <div className="flex flex-col items-center text-center space-y-8 pt-20 pb-16 md:pt-28 md:pb-24">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100/50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 text-[10px] font-black uppercase tracking-[0.25em] text-zinc-500 backdrop-blur-md shadow-sm"
+        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary border border-border text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground backdrop-blur-sm"
       >
-        <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(var(--primary),0.5)]" />
+        <div className="h-1 w-1 rounded-full bg-emerald-500" />
         Curated for Design Engineers
       </motion.div>
 
-      <div className="space-y-4 max-w-5xl">
+      <div className="space-y-6 max-w-4xl">
         <motion.h1
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.95] text-zinc-900 dark:text-zinc-50"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1] text-foreground"
         >
-          Refined components for <br />
-          <span className="text-zinc-400 dark:text-zinc-600 italic font-serif font-light lowercase">
-            modern builders.
+          Refined UI components for <br />
+          <span className="font-serif italic text-muted-foreground">
+            modern interfaces
           </span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="mx-auto max-w-2xl text-zinc-500 dark:text-zinc-400 text-base md:text-lg lg:text-xl font-bold leading-relaxed tracking-tight px-4"
+          className="mx-auto max-w-2xl text-muted-foreground text-base md:text-lg lg:text-xl font-medium leading-relaxed tracking-tight px-4"
         >
-          High-end React primitives engineered with{" "}
+          An ecosystem of high-end React components.{" "}
           <br className="hidden md:block" />
-          tactile precision and fluid motion.
+          Engineered with precision motion and tactile feedback.
         </motion.p>
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 15 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-        className="flex flex-wrap items-center justify-center gap-3 pt-4"
+        className="flex flex-wrap items-center justify-center gap-4 pt-4"
       >
         <Link href="/docs/introduction">
           <RichButton
             size="default"
             color="default"
-            className="rounded-2xl h-12 px-8 text-xs font-black uppercase tracking-widest border-zinc-200 dark:border-zinc-800 shadow-xl shadow-zinc-200/50 dark:shadow-none transition-all active:scale-95"
+            className="rounded-full h-11 px-8 text-sm font-semibold tracking-tight border-border"
           >
-            Explore Docs <ArrowRight size={14} className="ml-2" />
+            Get Started <ArrowRight size={16} className="ml-2" />
           </RichButton>
         </Link>
         <Link href="/docs/components/accordion">
           <RichButton
             size="default"
             color="blue"
-            className="rounded-2xl h-12 px-8 text-xs font-black uppercase tracking-widest gap-2 shadow-xl shadow-blue-500/10 transition-all active:scale-95"
+            className="rounded-full h-11 px-8 text-sm font-semibold tracking-tight gap-2"
           >
-            <Layout size={14} /> Components
+            <Layout size={16} className="mr-2" /> Components
           </RichButton>
         </Link>
       </motion.div>
