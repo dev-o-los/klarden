@@ -30,81 +30,126 @@ interface RichButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> 
   asChild?: boolean;
 }
 
-const colorConfig: Record<Color, { bg: string; border: string; text: string }> =
-  {
-    // Inverse Logic: Black on White background, White on Black background
-    default: {
-      bg: "bg-zinc-900 dark:bg-zinc-100",
-      border: "border-zinc-700 dark:border-zinc-400",
-      text: "text-zinc-100 dark:text-zinc-900",
-    },
-    blue: { bg: "bg-blue-600", border: "border-blue-800", text: "text-white" },
-    purple: {
-      bg: "bg-purple-600",
-      border: "border-purple-800",
-      text: "text-white",
-    },
-    emerald: {
-      bg: "bg-emerald-600",
-      border: "border-emerald-800",
-      text: "text-white",
-    },
-    red: { bg: "bg-red-600", border: "border-red-800", text: "text-white" },
-    pink: { bg: "bg-pink-600", border: "border-pink-800", text: "text-white" },
-    orange: {
-      bg: "bg-orange-500",
-      border: "border-orange-700",
-      text: "text-white",
-    },
-    yellow: {
-      bg: "bg-yellow-400",
-      border: "border-yellow-600",
-      text: "text-zinc-950",
-    },
-    green: {
-      bg: "bg-green-600",
-      border: "border-green-800",
-      text: "text-white",
-    },
-    teal: { bg: "bg-teal-600", border: "border-teal-800", text: "text-white" },
-    cyan: {
-      bg: "bg-cyan-500",
-      border: "border-cyan-700",
-      text: "text-zinc-950",
-    },
-    indigo: {
-      bg: "bg-indigo-600",
-      border: "border-indigo-800",
-      text: "text-white",
-    },
-    violet: {
-      bg: "bg-violet-600",
-      border: "border-violet-800",
-      text: "text-white",
-    },
-    rose: { bg: "bg-rose-600", border: "border-rose-800", text: "text-white" },
-    amber: {
-      bg: "bg-amber-500",
-      border: "border-amber-700",
-      text: "text-white",
-    },
-    lime: {
-      bg: "bg-lime-500",
-      border: "border-lime-700",
-      text: "text-zinc-950",
-    },
-    sky: { bg: "bg-sky-500", border: "border-sky-700", text: "text-white" },
-    fuchsia: {
-      bg: "bg-fuchsia-600",
-      border: "border-fuchsia-800",
-      text: "text-white",
-    },
-  };
+const colorConfig: Record<Color, { 
+  bg: string; 
+  text: string;
+  border: string;
+  glow: string;
+}> = {
+  default: {
+    bg: "bg-zinc-900 dark:bg-zinc-100",
+    text: "text-zinc-100 dark:text-zinc-900",
+    border: "border-zinc-800 dark:border-zinc-200",
+    glow: "shadow-zinc-500/10",
+  },
+  blue: {
+    bg: "bg-blue-500",
+    text: "text-white",
+    border: "border-blue-400/50",
+    glow: "shadow-blue-500/20",
+  },
+  purple: {
+    bg: "bg-purple-500",
+    text: "text-white",
+    border: "border-purple-400/50",
+    glow: "shadow-purple-500/20",
+  },
+  emerald: {
+    bg: "bg-emerald-500",
+    text: "text-white",
+    border: "border-emerald-400/50",
+    glow: "shadow-emerald-500/20",
+  },
+  red: {
+    bg: "bg-red-500",
+    text: "text-white",
+    border: "border-red-400/50",
+    glow: "shadow-red-500/20",
+  },
+  pink: {
+    bg: "bg-pink-500",
+    text: "text-white",
+    border: "border-pink-400/50",
+    glow: "shadow-pink-500/20",
+  },
+  orange: {
+    bg: "bg-orange-500",
+    text: "text-white",
+    border: "border-orange-400/50",
+    glow: "shadow-orange-500/20",
+  },
+  yellow: {
+    bg: "bg-yellow-400",
+    text: "text-zinc-950",
+    border: "border-yellow-300/50",
+    glow: "shadow-yellow-500/20",
+  },
+  green: {
+    bg: "bg-green-500",
+    text: "text-white",
+    border: "border-green-400/50",
+    glow: "shadow-green-500/20",
+  },
+  teal: {
+    bg: "bg-teal-500",
+    text: "text-white",
+    border: "border-teal-400/50",
+    glow: "shadow-teal-500/20",
+  },
+  cyan: {
+    bg: "bg-cyan-500",
+    text: "text-zinc-950",
+    border: "border-cyan-400/50",
+    glow: "shadow-cyan-500/20",
+  },
+  indigo: {
+    bg: "bg-indigo-500",
+    text: "text-white",
+    border: "border-indigo-400/50",
+    glow: "shadow-indigo-500/20",
+  },
+  violet: {
+    bg: "bg-violet-500",
+    text: "text-white",
+    border: "border-violet-400/50",
+    glow: "shadow-violet-500/20",
+  },
+  rose: {
+    bg: "bg-rose-500",
+    text: "text-white",
+    border: "border-rose-400/50",
+    glow: "shadow-rose-500/20",
+  },
+  amber: {
+    bg: "bg-amber-500",
+    text: "text-white",
+    border: "border-amber-400/50",
+    glow: "shadow-amber-500/20",
+  },
+  lime: {
+    bg: "bg-lime-500",
+    text: "text-zinc-950",
+    border: "border-lime-400/50",
+    glow: "shadow-lime-500/20",
+  },
+  sky: {
+    bg: "bg-sky-500",
+    text: "text-white",
+    border: "border-sky-400/50",
+    glow: "shadow-sky-500/20",
+  },
+  fuchsia: {
+    bg: "bg-fuchsia-500",
+    text: "text-white",
+    border: "border-fuchsia-400/50",
+    glow: "shadow-fuchsia-500/20",
+  },
+};
 
 const sizeStyles: Record<"sm" | "default" | "lg", string> = {
-  sm: "h-8 px-3 text-[11px] gap-1.5",
-  default: "h-10 px-5 text-[13px] gap-2",
-  lg: "h-12 px-8 text-[15px] gap-2.5",
+  sm: "h-9 px-4 text-[11px] gap-2",
+  default: "h-11 px-6 text-[13px] gap-2.5",
+  lg: "h-13 px-10 text-[15px] gap-3",
 };
 
 const RichButton = React.forwardRef<HTMLButtonElement, RichButtonProps>(
@@ -126,19 +171,27 @@ const RichButton = React.forwardRef<HTMLButtonElement, RichButtonProps>(
       <Comp
         ref={ref}
         className={cn(
-          "group relative cursor-pointer inline-flex items-center justify-center font-bold tracking-wide transition-all duration-200",
-          "rounded-xl border-b-2 border-r-2 border-l border-t active:scale-[0.98]",
-          "hover:border-b hover:border-r hover:translate-x-px hover:translate-y-px",
-          "active:border-b-0 active:border-r-0 active:translate-x-0.5 active:translate-y-0.5 active:shadow-inner",
-          "shadow-lg shadow-black/20 dark:shadow-white/10",
+          "group relative cursor-pointer inline-flex items-center justify-center font-black uppercase tracking-widest transition-all duration-300",
+          "rounded-2xl overflow-hidden active:scale-95 hover:scale-[1.02]",
           colors.bg,
-          colors.border,
           colors.text,
+          colors.border,
+          colors.glow,
+          "border shadow-lg",
           sizeStyles[size],
           className,
         )}
         {...props}
       >
+        {/* Glossy Overlay Gradient */}
+        <span className="absolute inset-0 bg-linear-to-b from-white/20 to-transparent opacity-40 pointer-events-none" />
+        
+        {/* Top Edge Highlight */}
+        <span className="absolute inset-x-0 top-0 h-px bg-white/30 pointer-events-none" />
+        
+        {/* Animated Shine Sweep */}
+        <span className="absolute inset-0 w-[200%] h-full bg-linear-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+
         <span className="relative z-10 flex items-center justify-center">
           {children}
         </span>
@@ -151,13 +204,13 @@ RichButton.displayName = "RichButton";
 
 const RichButtonDemo = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-4">
       <RichButton color="default">Default</RichButton>
-      <RichButton color="blue">Blue</RichButton>
+      <RichButton color="blue">Primary</RichButton>
       <RichButton color="purple">Purple</RichButton>
-      <RichButton color="emerald">Emerald</RichButton>
-      <RichButton color="rose">Rose</RichButton>
-      <RichButton color="amber">Amber</RichButton>
+      <RichButton color="emerald">Success</RichButton>
+      <RichButton color="rose">Warning</RichButton>
+      <RichButton color="amber">Caution</RichButton>
     </div>
   );
 };

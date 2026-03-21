@@ -93,6 +93,21 @@
       "dependencies": ["framer-motion", "lucide-react"],
       "registryDependencies": [],
       "category": "button"
+    },
+    {
+      "name": "tactile-highlight",
+      "type": "registry:component",
+      "title": "Tactile Highlight",
+      "description": "A fluid text highlight component that reacts to viewport visibility and user interaction.",
+      "files": [
+        {
+          "path": "registry/klarden-ui/tactile-highlight.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": ["framer-motion"],
+      "registryDependencies": [],
+      "category": "typography"
     }
   ]
 }

@@ -10,8 +10,9 @@ import { CommandOrbit } from "@/registry/klarden-ui/command-orbit";
 import { MagneticDock } from "@/registry/klarden-ui/magnetic-dock";
 import { PortalUploader } from "@/registry/klarden-ui/portal-uploader";
 import { RichButton } from "@/registry/klarden-ui/rich-button";
+import { TactileHighlight } from "@/registry/klarden-ui/tactile-highlight";
 import { motion, type Variants } from "framer-motion";
-import { Layout, MousePointer2, Zap } from "lucide-react";
+import { Layout, MousePointer2, Type, Zap } from "lucide-react";
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -110,40 +111,50 @@ export function Showcase() {
         </div>
       </motion.div>
 
-      {/* Rich Button showcase */}
+      {/* Tactile Text showcase */}
       <motion.div
         variants={itemVariants}
-        className="md:col-span-12 group relative overflow-hidden rounded-3xl border border-border bg-card/50 p-8 md:p-10 shadow-sm backdrop-blur-sm transition-colors duration-500"
+        className="md:col-span-6 group relative overflow-hidden rounded-3xl border border-border bg-card/50 p-8 md:p-10 shadow-sm backdrop-blur-sm transition-colors duration-500 flex flex-col min-h-70"
       >
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-10">
-          <div className="text-center md:text-left">
-            <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-background border border-border text-[8px] font-black uppercase tracking-widest text-muted-foreground mb-2 w-fit mx-auto md:mx-0 shadow-xs">
-              <Zap size={10} /> Varieties
-            </div>
-            <h3 className="text-2xl font-black tracking-tight mb-2">
-              3D Rich Buttons
-            </h3>
-            <p className="text-muted-foreground text-sm font-medium italic">
-              Tactile depth with modern aesthetics.
-            </p>
+        <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-background border border-border text-[8px] font-black uppercase tracking-widest text-muted-foreground mb-2 w-fit shadow-xs">
+          <Type size={10} /> Typography
+        </div>
+        <h3 className="text-xl font-black tracking-tight mb-4">Tactile Text</h3>
+        <div className="flex-1 flex items-center justify-center py-6 px-4">
+          <div className="text-2xl md:text-3xl font-black tracking-tighter text-zinc-900 dark:text-zinc-50 text-center leading-tight">
+            Build{" "}
+            <TactileHighlight direction="left">
+              Better Interfaces
+            </TactileHighlight>
           </div>
-          <div className="flex flex-wrap justify-center gap-3">
-            <RichButton color="blue" size="sm" className="rounded-xl px-5">
-              Primary
-            </RichButton>
-            <RichButton color="emerald" size="sm" className="rounded-xl px-5">
-              Success
-            </RichButton>
-            <RichButton color="purple" size="sm" className="rounded-xl px-5">
-              Purple
-            </RichButton>
-            <RichButton color="rose" size="sm" className="rounded-xl px-5">
-              Warning
-            </RichButton>
-            <RichButton color="amber" size="sm" className="rounded-xl px-5">
-              Caution
-            </RichButton>
-          </div>
+        </div>
+      </motion.div>
+
+      {/* Glossy Buttons showcase */}
+      <motion.div
+        variants={itemVariants}
+        className="md:col-span-6 group relative overflow-hidden rounded-3xl border border-border bg-card/50 p-8 md:p-10 shadow-sm backdrop-blur-sm transition-colors duration-500 flex flex-col min-h-70"
+      >
+        <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-background border border-border text-[8px] font-black uppercase tracking-widest text-muted-foreground mb-2 w-fit shadow-xs">
+          <Zap size={10} /> Varieties
+        </div>
+        <h3 className="text-xl font-black tracking-tight mb-2">
+          Glossy Buttons
+        </h3>
+
+        <div className="flex-1 flex flex-wrap items-center justify-center gap-4">
+          <RichButton color="blue" size="sm" className="rounded-xl px-4">
+            Primary
+          </RichButton>
+          <RichButton color="emerald" size="sm" className="rounded-xl px-4">
+            <Zap size={14} className="mr-2" /> Success
+          </RichButton>
+          <RichButton color="purple" size="sm" className="rounded-xl px-4">
+            Purple
+          </RichButton>
+          <RichButton color="default" size="sm" className="rounded-xl">
+            Dark
+          </RichButton>
         </div>
       </motion.div>
     </motion.div>

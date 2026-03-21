@@ -55,3 +55,16 @@ export function getAllDocs(): DocMetadata[] {
     };
   });
 }
+
+export function getAdjacentDocs(currentSlug: string): { 
+  prev: DocMetadata | null; 
+  next: DocMetadata | null; 
+} {
+  const allDocs = getAllDocs();
+  const currentIndex = allDocs.findIndex((doc) => doc.slug === currentSlug);
+
+  return {
+    prev: currentIndex > 0 ? allDocs[currentIndex - 1] : null,
+    next: currentIndex < allDocs.length - 1 ? allDocs[currentIndex + 1] : null,
+  };
+}

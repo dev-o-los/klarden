@@ -15,4 +15,7 @@ export const registry: Record<
   "portal-uploader": dynamic(
     () => import("@/registry/klarden-ui/portal-uploader"),
   ),
+  "tactile-highlight": dynamic(
+    () => import("@/registry/klarden-ui/tactile-highlight"),
+  ),
 };
