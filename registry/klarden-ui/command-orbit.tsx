@@ -288,7 +288,7 @@ export function CommandOrbit({
             setIsOpen(false);
             setSelectedIdx(null);
           }}
-          className="fixed inset-0 z-40 bg-zinc-950/5 dark:bg-black/10 backdrop-blur-[1px]"
+          className="fixed inset-0 z-40 bg-transparent pointer-events-auto"
         />
       )}
     </div>
@@ -296,9 +296,7 @@ export function CommandOrbit({
 }
 
 const CommandOrbitDemo = () => {
-  return (
-    <CommandOrbit radius={100} />
-  );
+  return <CommandOrbit radius={100} />;
 };
 
 export default CommandOrbitDemo;

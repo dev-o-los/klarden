@@ -27,12 +27,12 @@ export async function CodeBlock({
   return (
     <div
       className={cn(
-        "relative group my-6 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950",
+        "relative group my-6 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-background",
         className,
       )}
     >
       {filename && (
-        <div className="flex items-center px-4 py-2 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-100/50 dark:bg-zinc-900/50">
+        <div className="flex items-center px-4 py-2 border-b border-zinc-200 dark:border-zinc-800 bg-background">
           <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">
             {filename}
           </span>
