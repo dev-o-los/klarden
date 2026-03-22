@@ -1,5 +1,6 @@
 "use client";
 
+import { LogoIcon } from "@/components/landing/logo-icon";
 import { DocMetadata } from "@/lib/docs";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
@@ -99,13 +100,11 @@ export function MobileNav({ items }: MobileNavProps) {
                 className="absolute inset-y-0 left-0 w-75 bg-white dark:bg-zinc-950 border-r border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden flex flex-col"
               >
                 <div className="flex items-center justify-between p-6 border-b border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-950/50 backdrop-blur-xl">
-                  <div className="flex items-center gap-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-lg shadow-primary/20">
-                      <Layout size={18} />
-                    </div>
-                    <span className="text-lg font-black tracking-tighter uppercase text-zinc-900 dark:text-zinc-50">
+                  <div className="flex items-center -ml-2">
+                    <LogoIcon className="size-12 text-zinc-900 dark:text-zinc-50" />
+                    <span className="text-xl font-black tracking-tighter leading-none text-zinc-900 dark:text-zinc-50 -ml-2">
                       Klarden{" "}
-                      <span className="text-zinc-500 font-bold">UI</span>
+                      <span className="text-zinc-500 font-bold ml-1">UI</span>
                     </span>
                   </div>
                   <button

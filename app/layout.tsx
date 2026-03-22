@@ -1,8 +1,8 @@
+import { ThemeProvider } from "@/components/theme-provider";
+import { SITE_CONFIG } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { SITE_CONFIG } from "@/lib/constants";
 
 const geistSans = Bricolage_Grotesque({
   variable: "--font-bricolage-grotesque",
@@ -43,7 +43,8 @@ export const metadata: Metadata = {
     creator: SITE_CONFIG.twitter,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
 };
 

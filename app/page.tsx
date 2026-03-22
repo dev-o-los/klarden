@@ -3,7 +3,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Showcase } from "@/components/landing/Showcase";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/next";
-import { Layers } from "lucide-react";
+import { LogoIcon } from "@/components/landing/logo-icon";
 import Link from "next/link";
 
 export const metadata = {
@@ -24,13 +24,11 @@ export default function Home() {
         <footer className="mt-32 border-t border-border pt-16 pb-12">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8">
             <div className="space-y-4">
-              <div className="flex items-center gap-2 group cursor-default">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground transition-transform group-hover:rotate-12">
-                  <Layers size={18} />
-                </div>
-                <span className="text-lg font-black tracking-tighter uppercase">
-                  {SITE_CONFIG.name.split(" ")[0]}{" "}
-                  <span className="text-muted-foreground font-bold">
+              <div className="flex items-center group cursor-default -ml-2">
+                <LogoIcon className="size-12 text-foreground transition-all duration-300 group-hover:rotate-12 group-hover:scale-110" />
+                <span className="text-xl md:text-2xl font-black text-foreground tracking-tighter leading-none -ml-2">
+                  {SITE_CONFIG.name.split(" ")[0]}
+                  <span className="text-muted-foreground font-bold ml-1">
                     {SITE_CONFIG.name.split(" ")[1]}
                   </span>
                 </span>
