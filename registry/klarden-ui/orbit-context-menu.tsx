@@ -46,7 +46,13 @@ const OrbitContextMenu = ({
 
   const handleContextMenu = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
-    setPosition({ x: e.clientX, y: e.clientY });
+    if (!containerRef.current) return;
+
+    const rect = containerRef.current.getBoundingClientRect();
+    setPosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
     setVisible(true);
   }, []);
 
@@ -54,14 +60,6 @@ const OrbitContextMenu = ({
     setVisible(false);
     setHoveredAction(null);
   }, []);
-
-  // Close on click outside
-  React.useEffect(() => {
-    if (!visible) return;
-    const handleGlobalClick = () => closeMenu();
-    window.addEventListener("click", handleGlobalClick);
-    return () => window.removeEventListener("click", handleGlobalClick);
-  }, [visible, closeMenu]);
 
   return (
     <div
@@ -74,10 +72,18 @@ const OrbitContextMenu = ({
       <AnimatePresence>
         {visible && (
           <div
-            className="fixed z-50 flex items-center justify-center pointer-events-none"
-            style={{ left: position.x, top: position.y }}
+            className="absolute z-50 flex items-center justify-center pointer-events-none"
+            style={{ left: `${position.x}px`, top: `${position.y}px` }}
           >
-            {/* The Arc Ring */}
+            {/* Overlay to catch clicks and close */}
+            <div 
+              className="fixed inset-0 pointer-events-auto" 
+              onClick={closeMenu}
+              onContextMenu={(e) => {
+                e.preventDefault();
+                closeMenu();
+              }}
+            />
             <motion.div
               initial={{ opacity: 0, rotate: -90, scale: 0.8 }}
               animate={{ opacity: 1, rotate: 0, scale: 1 }}

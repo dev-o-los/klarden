@@ -75,54 +75,43 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-[14px] text-zinc-500 dark:text-zinc-400"
+    className="overflow-hidden text-[14px] text-zinc-500 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down dark:text-zinc-400"
     {...props}
   >
-    <motion.div
-      initial={{ opacity: 0, y: -8, filter: "blur(4px)" }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        transition: {
-          type: "spring",
-          stiffness: 260,
-          damping: 25,
-        },
-      }}
-      className={cn("px-4 pb-6 pt-1 leading-relaxed", className)}
-    >
+    <div className={cn("px-4 pb-6 pt-1 leading-relaxed", className)}>
       {children}
-    </motion.div>
+    </div>
   </AccordionPrimitive.Content>
 ));
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
 const AccordionDemo = () => {
   return (
-    <Accordion type="single" collapsible className="w-full max-w-md">
-      <AccordionItem value="item-1">
-        <AccordionTrigger>Is it animated?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It uses Framer Motion for smooth, spring-based transitions and
-          magnetic text effects on hover.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-2">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It is built on top of Radix UI accessible primitives, supporting
-          keyboard navigation and screen readers.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-3">
-        <AccordionTrigger>Can I customize it?</AccordionTrigger>
-        <AccordionContent>
-          Absolutely. The component is built with Tailwind CSS and Framer
-          Motion, making it easy to tweak colors, animations, and layouts.
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
+    <div className="w-87.5 sm:w-112.5">
+      <Accordion type="single" collapsible className="w-full">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Is it animated?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It uses Framer Motion for smooth, spring-based transitions and
+            magnetic text effects on hover.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Is it accessible?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It is built on top of Radix UI accessible primitives,
+            supporting keyboard navigation and screen readers.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Can I customize it?</AccordionTrigger>
+          <AccordionContent>
+            Absolutely. The component is built with Tailwind CSS and Framer
+            Motion, making it easy to tweak colors, animations, and layouts.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </div>
   );
 };
 
