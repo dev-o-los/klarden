@@ -240,5 +240,3 @@ export const PortalUploader: React.FC<PortalUploaderProps> = ({
     </div>
   );
 };
-
-export default PortalUploader;

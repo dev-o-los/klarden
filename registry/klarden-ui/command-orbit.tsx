@@ -294,9 +294,3 @@ export function CommandOrbit({
     </div>
   );
 }
-
-const CommandOrbitDemo = () => {
-  return <CommandOrbit radius={100} />;
-};
-
-export default CommandOrbitDemo;

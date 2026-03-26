@@ -5,20 +5,20 @@ export const registry: Record<
   string,
   React.ComponentType<Record<string, unknown>>
 > = {
-  "rich-button": dynamic(() => import("@/registry/klarden-ui/rich-button")),
-  "command-orbit": dynamic(() => import("@/registry/klarden-ui/command-orbit")),
+  "rich-button": dynamic(() => import("@/registry/demos/rich-button-demo")),
+  "command-orbit": dynamic(() => import("@/registry/demos/command-orbit-demo")),
   "orbit-context-menu": dynamic(
-    () => import("@/registry/klarden-ui/orbit-context-menu"),
+    () => import("@/registry/demos/orbit-context-menu-demo"),
   ),
-  accordion: dynamic(() => import("@/registry/klarden-ui/accordion")),
-  "magnetic-dock": dynamic(() => import("@/registry/klarden-ui/magnetic-dock")),
+  accordion: dynamic(() => import("@/registry/demos/accordion-demo")),
+  "magnetic-dock": dynamic(() => import("@/registry/demos/magnetic-dock-demo")),
   "portal-uploader": dynamic(
-    () => import("@/registry/klarden-ui/portal-uploader"),
+    () => import("@/registry/demos/portal-uploader-demo"),
   ),
   "tactile-highlight": dynamic(
-    () => import("@/registry/klarden-ui/tactile-highlight"),
+    () => import("@/registry/demos/tactile-highlight-demo"),
   ),
   "spotify-card": dynamic(
-    () => import("@/registry/klarden-ui/spotify/spotify-card"),
+    () => import("@/registry/demos/spotify-card-demo"),
   ),
 };
