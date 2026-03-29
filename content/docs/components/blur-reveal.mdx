@@ -1,0 +1,102 @@
+---
+title: Blur Reveal Text
+description: A text animation component that reveals characters with a smooth blur effect.
+category: Components
+---
+
+The BlurRevealText component animates text by revealing each character with a smooth blur effect. Characters cascade in sequentially, creating an elegant typing-like reveal animation. Perfect for hero headings, taglines, and impactful text moments.
+
+## Preview
+
+<ComponentPreview name="blur-reveal">
+```tsx
+import { BlurRevealText } from "@/components/blur-reveal-text";
+
+export default function Example() {
+  return (
+    <BlurRevealText>
+      You can just ship things.
+    </BlurRevealText>
+  );
+}
+```
+</ComponentPreview>
+
+## Usage
+
+### Installation
+
+<InstallBlock command="blur-reveal" />
+
+### Basic Example
+
+```tsx
+import { BlurRevealText } from "@/components/blur-reveal-text";
+
+export default function App() {
+  return <BlurRevealText>You can just ship things.</BlurRevealText>;
+}
+```
+
+### Custom Blur Strength
+
+```tsx
+import { BlurRevealText } from "@/components/blur-reveal-text";
+
+export default function App() {
+  return (
+    <BlurRevealText blurStrength={15} duration={1}>
+      Build beautiful interfaces.
+    </BlurRevealText>
+  );
+}
+```
+
+### With Delay
+
+```tsx
+import { BlurRevealText } from "@/components/blur-reveal-text";
+
+export default function App() {
+  return (
+    <BlurRevealText delay={0.5} duration={0.8}>
+      Design. Develop. Deploy.
+    </BlurRevealText>
+  );
+}
+```
+
+## Properties
+
+<PropsTable>
+  <Prop
+    name="children"
+    type="string"
+    default="—"
+    description="The text content to animate. Must be a string."
+  />
+  <Prop
+    name="delay"
+    type="number"
+    default="0"
+    description="Delay in seconds before the animation starts."
+  />
+  <Prop
+    name="duration"
+    type="number"
+    default="0.8"
+    description="Duration of the animation in seconds."
+  />
+  <Prop
+    name="className"
+    type="string"
+    default="—"
+    description="Additional CSS classes for the root container."
+  />
+  <Prop
+    name="blurStrength"
+    type="number"
+    default="10"
+    description="The initial blur strength in pixels."
+  />
+</PropsTable>

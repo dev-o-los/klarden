@@ -18,7 +18,6 @@ export const registry: Record<
   "tactile-highlight": dynamic(
     () => import("@/registry/demos/tactile-highlight-demo"),
   ),
-  "spotify-card": dynamic(
-    () => import("@/registry/demos/spotify-card-demo"),
-  ),
+  "spotify-card": dynamic(() => import("@/registry/demos/spotify-card-demo")),
+  "blur-reveal": dynamic(() => import("@/registry/demos/blur-reveal-demo")),
 };
