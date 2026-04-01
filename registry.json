@@ -158,6 +158,21 @@
       "dependencies": ["framer-motion"],
       "registryDependencies": [],
       "category": "typography"
+    },
+    {
+      "name": "label-input",
+      "type": "registry:component",
+      "title": "Label Input",
+      "description": "A beautiful input field with floating labels, password visibility toggle, and extensive color variants.",
+      "files": [
+        {
+          "path": "registry/klarden-ui/label-input.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": ["framer-motion", "lucide-react"],
+      "registryDependencies": [],
+      "category": "form"
     }
   ]
 }

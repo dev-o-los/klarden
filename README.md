@@ -6,6 +6,32 @@ Klarden UI is an ecosystem of high-end React primitives designed for modern inte
 
 ## 🚀 Quick Start
 
+### Using the @klarden Namespace (Recommended)
+
+Install components directly from the Klarden registry using the namespace:
+
+1. **Configure the namespace in your project:**
+
+   Add the following to your `components.json`:
+
+   ```json
+   {
+     "registries": {
+       "@klarden": "https://klarden.vercel.app/registry/{name}.json"
+     }
+   }
+   ```
+
+2. **Install components:**
+
+   ```bash
+   pnpm dlx shadcn@latest add @klarden/rich-button
+   pnpm dlx shadcn@latest add @klarden/command-orbit
+   pnpm dlx shadcn@latest add @klarden/magnetic-dock
+   ```
+
+### Development Setup
+
 1. **Clone the repository:**
 
    ```bash
@@ -33,6 +59,42 @@ Open [http://localhost:3000](http://localhost:3000) to view the documentation an
 - **Animation:** Framer Motion
 - **Content:** MDX (next-mdx-remote)
 - **Syntax Highlighting:** Shiki (Dual-theme support)
+
+## 📦 Namespace Usage
+
+The `@klarden` namespace allows you to install components directly from the Klarden registry without needing to configure a custom registry URL every time.
+
+### Available Commands
+
+```bash
+# Install a single component
+pnpm dlx shadcn@latest add @klarden/rich-button
+
+# Install multiple components
+pnpm dlx shadcn@latest add @klarden/rich-button @klarden/command-orbit
+
+# Search for components
+pnpm dlx shadcn@latest search @klarden
+
+# View component details
+pnpm dlx shadcn@latest view @klarden/rich-button
+```
+
+### Available Components
+
+| Component | Description | Category |
+|-----------|-------------|----------|
+| `@klarden/rich-button` | Button with rich styling and color variants | Button |
+| `@klarden/command-orbit` | Circular command menu with orbiting actions | Navigation |
+| `@klarden/orbit-context-menu` | Radial context menu with neumorphic styling | Navigation |
+| `@klarden/accordion` | Premium accordion with smooth transitions | Layout |
+| `@klarden/magnetic-dock` | Bottom-docked nav with proximity magnification | Navigation |
+| `@klarden/portal-uploader` | Central drop zone with orbital animations | Upload |
+| `@klarden/tactile-highlight` | Text highlight that reacts to viewport | Typography |
+| `@klarden/spotify-card` | Spotify card with real-time metadata | Media |
+| `@klarden/blur-reveal` | Smooth reveal with blur and motion effects | Typography |
+| `@klarden/shimmer-text` | Text with elegant shimmer animation | Typography |
+| `@klarden/label-input` | Beautiful input with floating labels | Form |
 
 ---
 

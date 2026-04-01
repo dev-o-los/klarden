@@ -1,0 +1,123 @@
+---
+title: Label Input
+description: A clean input field with floating label and password visibility toggle.
+category: Components
+---
+
+The LabelInput is a minimalist form input component featuring a smooth floating label animation and optional password visibility toggle. Inspired by Spell UI's clean design.
+
+## Preview
+
+<ComponentPreview name="label-input">
+```tsx
+import { LabelInput } from "@/registry/klarden-ui/label-input";
+
+export default function Example() {
+  return (
+    <LabelInput
+      label="Email Address"
+      type="email"
+      placeholder="Enter your email"
+      ringColor="blue"
+    />
+  );
+}
+```
+</ComponentPreview>
+
+## Usage
+
+### Installation
+
+<InstallBlock command="@klarden/label-input" />
+
+## Examples
+
+### Color Variants
+
+<ComponentPreview name="label-input-colors">
+```tsx
+import { LabelInput } from "@/registry/klarden-ui/label-input";
+
+export default function Example() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl">
+      <LabelInput label="Blue" ringColor="blue" />
+      <LabelInput label="Purple" ringColor="purple" />
+      <LabelInput label="Pink" ringColor="pink" />
+      <LabelInput label="Green" ringColor="green" />
+      <LabelInput label="Orange" ringColor="orange" />
+      <LabelInput label="Rose" ringColor="rose" />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+### Login Form
+
+<ComponentPreview name="label-input-forms">
+```tsx
+import { LabelInput } from "@/registry/klarden-ui/label-input";
+
+export default function LoginForm() {
+  return (
+    <div className="space-y-4 w-full max-w-sm">
+      <LabelInput
+        label="Email"
+        type="email"
+        placeholder="Enter your email"
+        ringColor="blue"
+      />
+      <LabelInput
+        label="Password"
+        type="password"
+        placeholder="Enter your password"
+        ringColor="blue"
+      />
+    </div>
+  );
+}
+```
+</ComponentPreview>
+
+## Properties
+
+<PropsTable>
+  <Prop
+    name="label"
+    type="string"
+    default='""'
+    description="The floating label text for the input field."
+  />
+  <Prop
+    name="ringColor"
+    type="RingColor"
+    default='"muted"'
+    description="Defines the focus ring color. Options: muted, primary, secondary, destructive, red, blue, green, yellow, purple, pink, orange, cyan, indigo, violet, rose, amber, lime, emerald, sky, slate, fuchsia."
+  />
+  <Prop
+    name="type"
+    type="string"
+    default='"text"'
+    description="HTML input type (text, email, password, etc.). Password type shows visibility toggle."
+  />
+  <Prop
+    name="placeholder"
+    type="string"
+    default='""'
+    description="Placeholder text shown when input is empty and not focused."
+  />
+  <Prop
+    name="containerClassName"
+    type="string"
+    default="—"
+    description="Additional CSS classes for the container wrapper."
+  />
+  <Prop
+    name="className"
+    type="string"
+    default="—"
+    description="Additional CSS classes for the input element."
+  />
+</PropsTable>

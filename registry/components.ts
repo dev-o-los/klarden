@@ -21,5 +21,10 @@ export const registry: Record<
   "spotify-card": dynamic(() => import("@/registry/demos/spotify-card-demo")),
   "blur-reveal": dynamic(() => import("@/registry/demos/blur-reveal-demo")),
   "shimmer-text": dynamic(() => import("@/registry/demos/shimmer-text-demo")),
-  "shimmer-text-variants": dynamic(() => import("@/registry/demos/shimmer-text-variants-demo")),
+  "shimmer-text-variants": dynamic(
+    () => import("@/registry/demos/shimmer-text-variants-demo"),
+  ),
+  "label-input": dynamic(() => import("@/registry/demos/label-input-demo")),
+  "label-input-colors": dynamic(() => import("@/registry/demos/label-input-colors-demo")),
+  "label-input-forms": dynamic(() => import("@/registry/demos/label-input-forms-demo")),
 };
