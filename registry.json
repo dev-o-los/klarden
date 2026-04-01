@@ -143,6 +143,21 @@
       "dependencies": ["framer-motion"],
       "registryDependencies": [],
       "category": "typography"
+    },
+    {
+      "name": "shimmer-text",
+      "type": "registry:component",
+      "title": "Shimmer Text",
+      "description": "A premium text component with an elegant shimmer animation effect.",
+      "files": [
+        {
+          "path": "registry/klarden-ui/shimmer-text.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": ["framer-motion"],
+      "registryDependencies": [],
+      "category": "typography"
     }
   ]
 }

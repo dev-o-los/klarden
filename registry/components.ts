@@ -20,4 +20,5 @@ export const registry: Record<
   ),
   "spotify-card": dynamic(() => import("@/registry/demos/spotify-card-demo")),
   "blur-reveal": dynamic(() => import("@/registry/demos/blur-reveal-demo")),
+  "shimmer-text": dynamic(() => import("@/registry/demos/shimmer-text-demo")),
 };
