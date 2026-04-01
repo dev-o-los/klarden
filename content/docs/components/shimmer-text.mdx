@@ -14,7 +14,7 @@ import { ShimmerText } from "@/components/shimmer-text";
 
 export default function Example() {
   return (
-    <ShimmerText shimmerColor="#60a5fa" className="text-4xl font-bold">
+    <ShimmerText variant="default" className="text-4xl font-bold">
       Build beautiful interfaces
     </ShimmerText>
   );
@@ -34,23 +34,37 @@ export default function Example() {
 import { ShimmerText } from "@/components/shimmer-text";
 
 export default function App() {
-  return (
-    <ShimmerText>
-      Shimmer Effect
-    </ShimmerText>
-  );
+  return <ShimmerText>Shimmer Effect</ShimmerText>;
 }
 ```
 
-### Custom Shimmer Color
+### Color Variants
 
 ```tsx
 import { ShimmerText } from "@/components/shimmer-text";
 
 export default function App() {
   return (
-    <ShimmerText shimmerColor="#60a5fa" className="text-4xl font-bold">
-      Blue Shimmer
+    <>
+      <ShimmerText variant="blue">Blue Shimmer</ShimmerText>
+      <ShimmerText variant="purple">Purple Shimmer</ShimmerText>
+      <ShimmerText variant="green">Green Shimmer</ShimmerText>
+      <ShimmerText variant="gold">Gold Shimmer</ShimmerText>
+      <ShimmerText variant="rose">Rose Shimmer</ShimmerText>
+    </>
+  );
+}
+```
+
+### Custom Colors
+
+```tsx
+import { ShimmerText } from "@/components/shimmer-text";
+
+export default function App() {
+  return (
+    <ShimmerText shimmerColor="#60a5fa" shimmerColor2="#a855f7">
+      Custom Gradient
     </ShimmerText>
   );
 }
@@ -63,7 +77,7 @@ import { ShimmerText } from "@/components/shimmer-text";
 
 export default function App() {
   return (
-    <ShimmerText direction="rtl" shimmerColor="#a855f7" className="text-4xl font-bold">
+    <ShimmerText direction="rtl" variant="cyan">
       Reverse Direction
     </ShimmerText>
   );
@@ -77,7 +91,7 @@ import { ShimmerText } from "@/components/shimmer-text";
 
 export default function App() {
   return (
-    <ShimmerText duration={3} shimmerColor="#60a5fa" className="text-4xl font-bold">
+    <ShimmerText duration={4} variant="amber">
       Slow Shimmer
     </ShimmerText>
   );
@@ -91,10 +105,7 @@ import { ShimmerText } from "@/components/shimmer-text";
 
 export default function App() {
   return (
-    <ShimmerText 
-      shimmerColor="#a855f7" 
-      className="text-6xl font-bold"
-    >
+    <ShimmerText variant="gold" className="text-6xl font-bold">
       Big Shimmer
     </ShimmerText>
   );
@@ -119,8 +130,14 @@ export default function App() {
   <Prop
     name="shimmerColor"
     type="string"
-    default='"#60a5fa"'
-    description="The color of the shimmer highlight that flows through the text."
+    default="—"
+    description="Primary shimmer color (overrides variant). Hex format."
+  />
+  <Prop
+    name="shimmerColor2"
+    type="string"
+    default="—"
+    description="Secondary shimmer color for gradient effect. Hex format."
   />
   <Prop
     name="direction"

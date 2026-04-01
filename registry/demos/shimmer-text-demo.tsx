@@ -4,7 +4,7 @@ export default function ShimmerTextDemo() {
   return (
     <div className="flex items-center justify-center py-12 px-6">
       <ShimmerText
-        shimmerColor="#60a5fa"
+        variant="default"
         duration={2}
         className="text-4xl md:text-5xl"
       >
