@@ -6,7 +6,7 @@ import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 
 interface InstallBlockProps {
-  command: string; // The component name or full command
+  command: string;
 }
 
 export function InstallBlock({ command }: InstallBlockProps) {
@@ -15,13 +15,9 @@ export function InstallBlock({ command }: InstallBlockProps) {
   );
   const [copied, setCopied] = useState(false);
 
-  // If command is just a component name (e.g. "accordion"), construct the full shadcn command
-  // Support both namespace format (@klarden/component) and legacy format (component)
   const fullCommand = command.startsWith("shadcn")
-    ? command.replace("https://klarden-ui.com", SITE_CONFIG.url)
-    : command.startsWith("@klarden/")
-      ? `shadcn add ${command}`
-      : `shadcn add ${SITE_CONFIG.url}/r/${command}.json`;
+    ? command
+    : `shadcn add ${SITE_CONFIG.url}/r/${command}.json`;
 
   const managers = {
     pnpm: `pnpm dlx ${fullCommand}`,
@@ -37,19 +33,18 @@ export function InstallBlock({ command }: InstallBlockProps) {
   };
 
   return (
-    <div className="my-6 group relative overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-lg">
-      {/* Tab bar */}
+    <div className="my-6 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-lg">
       <div className="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/50 px-4 py-2.5">
-        <div className="flex items-center gap-1">
+        <div className="flex gap-4">
           {(["pnpm", "npm", "yarn", "bun"] as const).map((m) => (
             <button
               key={m}
               onClick={() => setActiveTab(m)}
               className={cn(
-                "px-3 py-1.5 text-xs font-mono font-medium rounded-md transition-all duration-200",
+                "text-[10px] font-black uppercase tracking-widest transition-colors",
                 activeTab === m
-                  ? "bg-zinc-900 dark:bg-zinc-100 text-zinc-50 dark:text-zinc-900 shadow-sm"
-                  : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50",
+                  ? "text-zinc-900 dark:text-zinc-50"
+                  : "text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300",
               )}
             >
               {m}
@@ -58,25 +53,18 @@ export function InstallBlock({ command }: InstallBlockProps) {
         </div>
         <button
           onClick={copyToClipboard}
-          className={cn(
-            "p-2 rounded-lg transition-all duration-200",
-            "text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50",
-            copied && "text-emerald-500",
-          )}
-          title="Copy to clipboard"
+          className="p-1.5 text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
         >
-          {copied ? <Check size={16} /> : <Copy size={16} />}
+          {copied ? (
+            <Check size={14} className="text-emerald-500" />
+          ) : (
+            <Copy size={14} />
+          )}
         </button>
       </div>
-
-      {/* Command output */}
-      <div className="p-5 font-mono text-sm leading-relaxed">
-        <div className="flex items-start gap-3 text-zinc-700 dark:text-zinc-300">
-          <span className="text-zinc-400 dark:text-zinc-600 font-bold select-none shrink-0">
-            $
-          </span>
-          <span className="break-all">{managers[activeTab]}</span>
-        </div>
+      <div className="p-4 font-mono text-sm text-zinc-700 dark:text-zinc-300 overflow-x-auto whitespace-nowrap">
+        <span className="text-zinc-400 select-none">$ </span>
+        {managers[activeTab]}
       </div>
     </div>
   );

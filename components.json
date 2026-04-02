@@ -15,8 +15,5 @@
     "ui": "@/components/ui",
     "lib": "@/lib",
     "hooks": "@/hooks"
-  },
-  "registries": {
-    "@klarden": "https://klarden.vercel.app/registry/{name}.json"
   }
 }
