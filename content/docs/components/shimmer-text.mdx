@@ -15,24 +15,13 @@ import { ShimmerText } from "@/components/shimmer-text";
 
 export default function Example() {
   return (
-    <div className="flex flex-wrap gap-4">
-      <ShimmerText variant="default" className="text-xl">Default</ShimmerText>
-      <ShimmerText variant="blue" className="text-xl">Blue</ShimmerText>
-      <ShimmerText variant="purple" className="text-xl">Purple</ShimmerText>
-      <ShimmerText variant="green" className="text-xl">Green</ShimmerText>
-      <ShimmerText variant="red" className="text-xl">Red</ShimmerText>
-      <ShimmerText variant="amber" className="text-xl">Amber</ShimmerText>
-      <ShimmerText variant="gold" className="text-xl">Gold</ShimmerText>
-      <ShimmerText variant="silver" className="text-xl">Silver</ShimmerText>
-      <ShimmerText variant="rose" className="text-xl">Rose</ShimmerText>
-      <ShimmerText variant="cyan" className="text-xl">Cyan</ShimmerText>
-      <ShimmerText variant="indigo" className="text-xl">Indigo</ShimmerText>
-      <ShimmerText variant="lime" className="text-xl">Lime</ShimmerText>
-      <ShimmerText variant="orange" className="text-xl">Orange</ShimmerText>
-      <ShimmerText variant="pink" className="text-xl">Pink</ShimmerText>
-      <ShimmerText variant="teal" className="text-xl">Teal</ShimmerText>
-      <ShimmerText variant="violet" className="text-xl">Violet</ShimmerText>
-    </div>
+    <ShimmerText
+      variant="default"
+      duration={2}
+      className="text-4xl md:text-5xl"
+    >
+      Build beautiful interfaces
+    </ShimmerText>
   );
 }
 ```
