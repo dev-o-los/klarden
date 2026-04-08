@@ -173,6 +173,21 @@
       "dependencies": ["framer-motion", "lucide-react"],
       "registryDependencies": [],
       "category": "form"
+    },
+    {
+      "name": "qr-code",
+      "type": "registry:component",
+      "title": "QR Code",
+      "description": "A beautiful QR code component with dot styling, gradient support, and extensive color customization.",
+      "files": [
+        {
+          "path": "registry/klarden-ui/qr-code.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": ["qrcode"],
+      "registryDependencies": [],
+      "category": "media"
     }
   ]
 }
