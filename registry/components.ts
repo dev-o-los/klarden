@@ -35,4 +35,9 @@ export const registry: Record<
   "qr-code-variants": dynamic(
     () => import("@/registry/demos/qr-code-variants-demo"),
   ),
+
+  pagination: dynamic(() => import("@/registry/demos/pagination-demo")),
+  "pagination-variants": dynamic(
+    () => import("@/registry/demos/pagination-variants-demo"),
+  ),
 };

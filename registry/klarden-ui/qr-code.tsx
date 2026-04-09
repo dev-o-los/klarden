@@ -144,12 +144,39 @@ export function QRCode({
         const outerR = finderOuterSize / 2;
         const whiteR = (finderOuterSize - moduleSize * 1.5) / 2;
         const innerR = finderMiddleSize / 2;
+        const outerSize = finderOuterSize;
+        const whiteSize = finderOuterSize - moduleSize * 1.5;
+        const innerSize = finderMiddleSize;
 
         return (
           <g key={`finder-${idx}`}>
-            <circle cx={cx} cy={cy} r={outerR} fill={effectiveColor} />
-            <circle cx={cx} cy={cy} r={whiteR} fill={bgColor} />
-            <circle cx={cx} cy={cy} r={innerR} fill={effectiveColor} />
+            <rect
+              x={cx - outerSize / 2}
+              y={cy - outerSize / 2}
+              width={outerSize}
+              height={outerSize}
+              rx={outerSize * 0.3}
+              ry={outerSize * 0.3}
+              fill={effectiveColor}
+            />
+            <rect
+              x={cx - whiteSize / 2}
+              y={cy - whiteSize / 2}
+              width={whiteSize}
+              height={whiteSize}
+              rx={whiteSize * 0.3}
+              ry={whiteSize * 0.3}
+              fill={bgColor}
+            />
+            <rect
+              x={cx - innerSize / 2}
+              y={cy - innerSize / 2}
+              width={innerSize}
+              height={innerSize}
+              rx={innerSize * 0.3}
+              ry={innerSize * 0.3}
+              fill={effectiveColor}
+            />
           </g>
         );
       })}
