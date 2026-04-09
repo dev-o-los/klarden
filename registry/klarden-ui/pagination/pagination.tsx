@@ -3,30 +3,7 @@
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
-import * as React from "react";
-
-type PaginationColor =
-  | "default"
-  | "blue"
-  | "purple"
-  | "pink"
-  | "red"
-  | "orange"
-  | "green"
-  | "teal"
-  | "cyan"
-  | "indigo"
-  | "violet"
-  | "rose"
-  | "amber"
-  | "lime"
-  | "sky"
-  | "emerald"
-  | "fuchsia";
-
-type PaginationVariant = "solid" | "outline" | "ghost" | "squircle";
-
-export type { PaginationColor, PaginationVariant };
+import type { PaginationColor, PaginationVariant } from "./types";
 
 interface PaginationProps {
   /** Total number of pages */
@@ -48,6 +25,8 @@ interface PaginationProps {
   /** Size of pagination */
   size?: "sm" | "md" | "lg";
 }
+
+export type { PaginationProps };
 
 const colorConfig: Record<
   PaginationColor,
@@ -425,23 +404,4 @@ export function Pagination({
       )}
     </nav>
   );
-}
-
-// Hook for easy pagination state management
-
-export function usePaginationState(initialPage = 1) {
-  const [page, setPage] = React.useState(initialPage);
-
-  const goToPage = React.useCallback((p: number) => setPage(p), []);
-  const nextPage = React.useCallback(() => setPage((p) => p + 1), []);
-  const prevPage = React.useCallback(() => setPage((p) => Math.max(1, p - 1)), []);
-  const resetPage = React.useCallback(() => setPage(1), []);
-
-  return {
-    page,
-    setPage: goToPage,
-    nextPage,
-    prevPage,
-    resetPage,
-  };
 }

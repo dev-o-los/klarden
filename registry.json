@@ -11,8 +11,20 @@
       "description": "A beautiful pagination component with multiple variants, colors, and smooth animations.",
       "files": [
         {
-          "path": "registry/klarden-ui/pagination.tsx",
+          "path": "registry/klarden-ui/pagination/index.ts",
           "type": "registry:component"
+        },
+        {
+          "path": "registry/klarden-ui/pagination/pagination.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/klarden-ui/pagination/types.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/klarden-ui/pagination/use-pagination-state.ts",
+          "type": "registry:hook"
         },
         {
           "path": "registry/demos/pagination-demo.tsx",
