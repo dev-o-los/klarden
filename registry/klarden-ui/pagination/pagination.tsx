@@ -2,7 +2,12 @@
 
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
+} from "lucide-react";
 import type { PaginationColor, PaginationVariant } from "./types";
 
 interface PaginationProps {
@@ -193,7 +198,7 @@ const variantStyles: Record<PaginationVariant, string> = {
 function usePagination(
   total: number,
   current: number,
-  siblingCount: number
+  siblingCount: number,
 ): (number | "start-ellipsis" | "end-ellipsis")[] {
   const totalNumbers = siblingCount * 2 + 3;
   const totalBlocks = totalNumbers + 2;
@@ -252,7 +257,10 @@ export function Pagination({
 
   return (
     <nav
-      className={cn("flex items-center justify-center gap-1 sm:gap-1.5", className)}
+      className={cn(
+        "flex items-center justify-center gap-1 sm:gap-1.5",
+        className,
+      )}
       role="navigation"
       aria-label="Pagination"
     >
