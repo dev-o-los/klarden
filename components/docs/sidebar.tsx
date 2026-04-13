@@ -1,26 +1,18 @@
 "use client";
 
 import { DocMetadata } from "@/lib/docs";
+import { getCategoryMeta } from "@/lib/categories";
 import { cn } from "@/lib/utils";
-import { Compass, Layout, LucideIcon, Rocket } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
 
 interface SidebarProps {
   items: DocMetadata[];
 }
 
-const categoryIcons: Record<string, LucideIcon> = {
-  "Getting Started": Rocket,
-  Components: Layout,
-  General: Compass,
-};
-
 export function Sidebar({ items }: SidebarProps) {
   const pathname = usePathname();
 
-  // Group items by category
   const categories = items.reduce(
     (acc, item) => {
       const category = item.category || "General";
@@ -31,17 +23,21 @@ export function Sidebar({ items }: SidebarProps) {
     {} as Record<string, DocMetadata[]>,
   );
 
+  const sortedEntries = Object.entries(categories).sort((a, b) => {
+    return getCategoryMeta(a[0]).order - getCategoryMeta(b[0]).order;
+  });
+
   return (
     <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block overflow-y-auto">
       <div className="h-full py-6 pr-6 lg:py-8">
-        {Object.entries(categories).map(([category, docs]) => {
-          const Icon = categoryIcons[category] || Compass;
+        {sortedEntries.map(([category, docs]) => {
+          const { icon: Icon, title } = getCategoryMeta(category);
           return (
             <div key={category} className="pb-8">
               <div className="flex items-center gap-2 mb-2 px-2">
                 <Icon size={14} className="text-zinc-400" />
                 <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400">
-                  {category}
+                  {title}
                 </h4>
               </div>
               <div className="grid grid-flow-row auto-rows-max text-sm gap-1">

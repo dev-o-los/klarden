@@ -2,9 +2,10 @@
 
 import { LogoIcon } from "@/components/landing/logo-icon";
 import { DocMetadata } from "@/lib/docs";
+import { getCategoryMeta } from "@/lib/categories";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { Compass, Layout, Menu, Rocket, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -13,12 +14,6 @@ import { createPortal } from "react-dom";
 interface MobileNavProps {
   items: DocMetadata[];
 }
-
-const categoryIcons: Record<string, React.ElementType> = {
-  "Getting Started": Rocket,
-  Components: Layout,
-  General: Compass,
-};
 
 export function MobileNav({ items }: MobileNavProps) {
   const [open, setOpen] = useState(false);
@@ -42,7 +37,6 @@ export function MobileNav({ items }: MobileNavProps) {
     setOpen(false);
   }
 
-  // Use useLayoutEffect or a simple useEffect to handle mounting state
   React.useLayoutEffect(() => {
     setMounted(true);
   }, []);
@@ -56,6 +50,10 @@ export function MobileNav({ items }: MobileNavProps) {
     },
     {} as Record<string, DocMetadata[]>,
   );
+
+  const sortedEntries = Object.entries(categories).sort((a, b) => {
+    return getCategoryMeta(a[0]).order - getCategoryMeta(b[0]).order;
+  });
 
   if (!mounted)
     return (
@@ -118,14 +116,14 @@ export function MobileNav({ items }: MobileNavProps) {
 
                 <div className="flex-1 overflow-y-auto p-6 bg-zinc-50/50 dark:bg-zinc-950/50">
                   <div className="space-y-8 pb-10">
-                    {Object.entries(categories).map(([category, docs]) => {
-                      const Icon = categoryIcons[category] || Compass;
+                    {sortedEntries.map(([category, docs]) => {
+                      const { icon: Icon, title } = getCategoryMeta(category);
                       return (
                         <div key={category}>
                           <div className="flex items-center gap-2 mb-4 px-2">
                             <Icon size={14} className="text-zinc-400" />
                             <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400">
-                              {category}
+                              {title}
                             </h4>
                           </div>
                           <div className="flex flex-col gap-1">
