@@ -35,6 +35,8 @@ interface SliderProps {
     | "sky"
     | "emerald"
     | "fuchsia";
+  /** Thumb shape variant */
+  thumb?: "circle" | "square" | "diamond" | "rounded" | "line";
   /** Whether the slider is disabled */
   disabled?: boolean;
   className?: string;
@@ -166,6 +168,7 @@ export function Slider({
   showRemaining = true,
   gap = "1",
   color = "default",
+  thumb = "circle",
   disabled = false,
   className,
 }: SliderProps) {
@@ -337,16 +340,28 @@ export function Slider({
           <div
             className={cn(
               "absolute top-1/2 -translate-y-1/2 -translate-x-1/2",
-              "h-4 w-4 rounded-full transition-all duration-150 ease-out",
+              "transition-all duration-150 ease-out",
               colors.thumb,
               isDragging && "scale-125",
               !isDragging && isHovering && "scale-110",
               !isHovering && "scale-0",
+              thumb === "circle" && "h-4 w-4 rounded-full",
+              thumb === "square" && "h-4 w-4 rounded-none",
+              thumb === "diamond" && "h-[18px] w-[18px] rotate-45 rounded-sm",
+              thumb === "rounded" && "h-4 w-4 rounded-lg",
+              thumb === "line" && "h-5 w-1 rounded-full",
             )}
             style={{ left: `${percentage}%` }}
           >
-            {/* Thumb inner dot */}
-            <div className="absolute inset-1.5 rounded-full bg-background" />
+            {thumb !== "line" && (
+              <div className={cn(
+                "absolute inset-[3px] bg-background",
+                thumb === "circle" && "rounded-full",
+                thumb === "square" && "rounded-none",
+                thumb === "diamond" && "rounded-sm rotate-[-45deg]",
+                thumb === "rounded" && "rounded-[3px]",
+              )} />
+            )}
           </div>
         </div>
       </div>

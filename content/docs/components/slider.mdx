@@ -67,6 +67,18 @@ export default function Example() {
     description="Callback when dragging ends (mouseup)."
   />
   <Prop
+    name="color"
+    type="SliderColor"
+    default='"default"'
+    description="Color variant for the track fill and thumb. Options: default, blue, purple, pink, red, orange, green, teal, cyan, indigo, violet, rose, amber, lime, sky, emerald, fuchsia."
+  />
+  <Prop
+    name="thumb"
+    type='"circle" | "square" | "diamond" | "rounded" | "line"'
+    default='"circle"'
+    description="Shape variant for the slider thumb."
+  />
+  <Prop
     name="showRemaining"
     type="boolean"
     default="true"
