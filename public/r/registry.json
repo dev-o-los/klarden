@@ -5,6 +5,33 @@
   "author": "dev-o-los (https://localhost:3000)",
   "items": [
     {
+      "name": "pagination",
+      "type": "registry:component",
+      "title": "Pagination",
+      "description": "A beautiful pagination component with multiple variants, colors, and smooth animations.",
+      "files": [
+        {
+          "path": "registry/klarden-ui/pagination/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/klarden-ui/pagination/pagination.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/klarden-ui/pagination/types.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/klarden-ui/pagination/use-pagination-state.ts",
+          "type": "registry:hook"
+        }
+      ],
+      "dependencies": ["framer-motion", "lucide-react"],
+      "registryDependencies": [],
+      "category": "navigation"
+    },
+    {
       "name": "rich-button",
       "type": "registry:component",
       "title": "Rich Button",
@@ -186,6 +213,21 @@
         }
       ],
       "dependencies": ["qrcode"],
+      "registryDependencies": [],
+      "category": "media"
+    },
+    {
+      "name": "slider",
+      "type": "registry:component",
+      "title": "Slider",
+      "description": "A sleek media progress slider with chapter toggle, draggable thumb, and time display.",
+      "files": [
+        {
+          "path": "registry/klarden-ui/slider.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "dependencies": ["lucide-react"],
       "registryDependencies": [],
       "category": "media"
     }

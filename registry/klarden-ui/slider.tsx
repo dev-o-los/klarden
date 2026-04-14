@@ -55,7 +55,10 @@ function formatTime(seconds: number): string {
   return hours > 0 ? `${hours}:${timeStr}` : timeStr;
 }
 
-const colorStyles: Record<string, { fill: string; thumb: string; glow: string; preview: string }> = {
+const colorStyles: Record<
+  string,
+  { fill: string; thumb: string; glow: string; preview: string }
+> = {
   default: {
     fill: "bg-foreground",
     thumb: "bg-foreground",
@@ -293,7 +296,10 @@ export function Slider({
   const colors = colorStyles[color] ?? colorStyles.default;
 
   return (
-    <div className={cn("w-full", className)} style={{ display: "flex", flexDirection: "column", gap: gapValue }}>
+    <div
+      className={cn("w-full", className)}
+      style={{ display: "flex", flexDirection: "column", gap: gapValue }}
+    >
       {/* Track */}
       <div
         ref={trackRef}
@@ -322,14 +328,20 @@ export function Slider({
         <div className="relative h-1 rounded-full bg-muted/50 backdrop-blur-sm">
           {/* Filled portion */}
           <div
-            className={cn("absolute inset-y-0 left-0 rounded-full transition-[width] duration-75 ease-out", colors.fill)}
+            className={cn(
+              "absolute inset-y-0 left-0 rounded-full transition-[width] duration-75 ease-out",
+              colors.fill,
+            )}
             style={{ width: `${percentage}%` }}
           />
 
           {/* Hover preview fill */}
           {isHovering && hoverValue !== null && !isDragging && (
             <div
-              className={cn("absolute inset-y-0 left-0 rounded-full transition-none", colors.preview)}
+              className={cn(
+                "absolute inset-y-0 left-0 rounded-full transition-none",
+                colors.preview,
+              )}
               style={{
                 width: `${(Math.max(0, Math.min(hoverValue, max)) / max) * 100}%`,
               }}
@@ -347,20 +359,22 @@ export function Slider({
               !isHovering && "scale-0",
               thumb === "circle" && "h-4 w-4 rounded-full",
               thumb === "square" && "h-4 w-4 rounded-none",
-              thumb === "diamond" && "h-[18px] w-[18px] rotate-45 rounded-sm",
+              thumb === "diamond" && "h-4.5 w-4.5 rotate-45 rounded-sm",
               thumb === "rounded" && "h-4 w-4 rounded-lg",
               thumb === "line" && "h-5 w-1 rounded-full",
             )}
             style={{ left: `${percentage}%` }}
           >
             {thumb !== "line" && (
-              <div className={cn(
-                "absolute inset-[3px] bg-background",
-                thumb === "circle" && "rounded-full",
-                thumb === "square" && "rounded-none",
-                thumb === "diamond" && "rounded-sm rotate-[-45deg]",
-                thumb === "rounded" && "rounded-[3px]",
-              )} />
+              <div
+                className={cn(
+                  "absolute inset-0.75 bg-background",
+                  thumb === "circle" && "rounded-full",
+                  thumb === "square" && "rounded-none",
+                  thumb === "diamond" && "rounded-sm -rotate-45",
+                  thumb === "rounded" && "rounded-[3px]",
+                )}
+              />
             )}
           </div>
         </div>

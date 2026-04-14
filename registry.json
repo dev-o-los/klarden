@@ -25,14 +25,6 @@
         {
           "path": "registry/klarden-ui/pagination/use-pagination-state.ts",
           "type": "registry:hook"
-        },
-        {
-          "path": "registry/demos/pagination-demo.tsx",
-          "type": "registry:demo"
-        },
-        {
-          "path": "registry/demos/pagination-variants-demo.tsx",
-          "type": "registry:demo"
         }
       ],
       "dependencies": ["framer-motion", "lucide-react"],
@@ -233,10 +225,6 @@
         {
           "path": "registry/klarden-ui/slider.tsx",
           "type": "registry:component"
-        },
-        {
-          "path": "registry/demos/slider-demo.tsx",
-          "type": "registry:demo"
         }
       ],
       "dependencies": ["lucide-react"],
