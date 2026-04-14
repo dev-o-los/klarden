@@ -28,8 +28,8 @@ export function Sidebar({ items }: SidebarProps) {
   });
 
   return (
-    <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block overflow-y-auto">
-      <div className="h-full py-6 pr-6 lg:py-8">
+    <aside className="sticky top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:block">
+      <div className="h-full overflow-y-auto py-6 pr-6 lg:py-8">
         {sortedEntries.map(([category, docs]) => {
           const { icon: Icon, title } = getCategoryMeta(category);
           return (
