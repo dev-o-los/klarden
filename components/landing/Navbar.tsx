@@ -1,9 +1,9 @@
 import { MobileNav } from "@/components/docs/mobile-nav";
+import { SearchWrapper } from "@/components/landing/search-wrapper";
 import { GitHubStarButton } from "@/components/github-star-button";
 import { ModeToggle } from "@/components/mode-toggle";
 import { SITE_CONFIG } from "@/lib/constants";
 import { getAllDocs } from "@/lib/docs";
-import { Search } from "lucide-react";
 import Link from "next/link";
 import { LogoIcon } from "./logo-icon";
 
@@ -40,13 +40,7 @@ export function Navbar() {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <button className="hidden sm:inline-flex items-center gap-2 h-9 px-4 rounded-md border border-input bg-background text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors">
-            <Search size={14} />
-            <span className="flex-1 text-left">Search...</span>
-            <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-              <span className="text-xs">⌘</span>K
-            </kbd>
-          </button>
+          <SearchWrapper items={docs} />
           <GitHubStarButton />
           <ModeToggle />
         </div>
