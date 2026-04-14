@@ -76,7 +76,7 @@ export function SearchDialog({ items, open, onOpenChange }: SearchDialogProps) {
                 <CommandGroup
                   key={category}
                   heading={
-                    <div className="flex items-center gap-2 px-2">
+                    <div className="flex items-center gap-2 px-0.5">
                       <Icon size={14} />
                       <span className="text-xs font-black uppercase tracking-[0.2em]">
                         {title}
@@ -102,7 +102,7 @@ export function SearchDialog({ items, open, onOpenChange }: SearchDialogProps) {
                           {doc.title}
                         </span>
                         {doc.description && (
-                          <span className="text-xs text-muted-foreground truncate line-clamp-1">
+                          <span className="text-xs text-muted-foreground text-ellipsis line-clamp-1">
                             {doc.description}
                           </span>
                         )}
