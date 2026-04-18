@@ -1,0 +1,217 @@
+---
+title: Animated Gradient
+description: Stunning WebGL-powered animated mist, lava, and plasma backgrounds with smooth silk-like flowing streams.
+category: Backgrounds
+---
+
+The Animated Gradient component creates mesmerizing, high-performance animated backgrounds using WebGL shaders with domain warping for organic, silk-like flowing streams.
+
+## Preview
+
+<ComponentPreview name="animated-gradient" />
+
+## Usage
+
+### Installation
+
+<InstallBlock command="npm install @/registry/klarden-ui/animated-gradient" />
+
+### Basic Example
+
+```tsx
+import { AnimatedGradient } from "@/registry/klarden-ui/animated-gradient";
+
+export default function App() {
+  return (
+    <AnimatedGradient
+      variant="mist"
+      speed={1}
+      opacity={0.8}
+      className="h-screen w-full"
+    />
+  );
+}
+```
+
+## Properties
+
+<PropsTable>
+  <Prop
+    name="variant"
+    type='"mist" | "lava" | "prism" | "plasma" | "pulse" | "vortex"'
+    default="mist"
+    description="Visual effect variant. Each creates a unique animated pattern."
+  />
+  <Prop
+    name="speed"
+    type="number"
+    default="1"
+    description="Animation speed multiplier. Higher values = faster animation."
+  />
+  <Prop
+    name="opacity"
+    type="number"
+    default="0.8"
+    description="Canvas opacity (0-1). Use to blend with background layers."
+  />
+  <Prop
+    name="className"
+    type="string"
+    default="—"
+    description="Additional CSS classes for the container."
+  />
+</PropsTable>
+
+## Variants
+
+### Mist
+Silk-like flowing pink/magenta streams with Gaussian blur effect.
+
+```tsx
+<AnimatedGradient variant="mist" className="h-64 w-full" />
+```
+
+### Lava
+Flowing orange/red molten streams.
+
+```tsx
+<AnimatedGradient variant="lava" className="h-64 w-full" />
+```
+
+### Prism
+Rainbow colors cycling through smooth gradients.
+
+```tsx
+<AnimatedGradient variant="prism" className="h-64 w-full" />
+```
+
+### Plasma
+Electric blue and purple energy streams.
+
+```tsx
+<AnimatedGradient variant="plasma" className="h-64 w-full" />
+```
+
+### Pulse
+Pulsing warm orange waves.
+
+```tsx
+<AnimatedGradient variant="pulse" className="h-64 w-full" />
+```
+
+### Vortex
+Swirling blue spiral vortex effect.
+
+```tsx
+<AnimatedGradient variant="vortex" className="h-64 w-full" />
+```
+
+## Examples
+
+### Full-Screen Background
+
+```tsx
+<main className="relative min-h-screen bg-black">
+  <AnimatedGradient
+    variant="mist"
+    speed={1.2}
+    opacity={0.8}
+    className="absolute inset-0"
+  />
+  <div className="relative z-10 flex items-center justify-center">
+    <h1 className="text-6xl font-bold text-white">
+      Your Content
+    </h1>
+  </div>
+</main>
+```
+
+### Hero Section
+
+```tsx
+<section className="relative h-[500px] overflow-hidden bg-black">
+  <AnimatedGradient
+    variant="prism"
+    speed={0.8}
+    opacity={0.7}
+    className="absolute inset-0"
+  />
+  <div className="relative z-10 flex h-full items-center justify-center">
+    <div className="text-center">
+      <h1 className="mb-4 text-6xl font-bold text-white">
+        Beautiful Backgrounds
+      </h1>
+      <p className="text-xl text-white/80">
+        WebGL-powered animated gradients
+      </p>
+    </div>
+  </div>
+</section>
+```
+
+### Card with Gradient
+
+```tsx
+<div className="relative overflow-hidden rounded-xl bg-black">
+  <AnimatedGradient
+    variant="plasma"
+    speed={1.5}
+    opacity={0.7}
+    className="h-48 w-full"
+  />
+  <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+  <div className="relative p-6">
+    <h3 className="text-white text-lg font-bold">Card Title</h3>
+  </div>
+</div>
+```
+
+### Interactive Variant Switcher
+
+```tsx
+"use client";
+
+import { AnimatedGradient } from "@/registry/klarden-ui/animated-gradient";
+import { useState } from "react";
+
+const variants = ["Mist", "Lava", "Prism", "Plasma", "Pulse", "Vortex"];
+
+export default function Hero() {
+  const [active, setActive] = useState("mist");
+
+  return (
+    <div className="relative h-[500px] overflow-hidden bg-black">
+      <AnimatedGradient
+        variant={active}
+        speed={1}
+        opacity={0.8}
+        className="absolute inset-0"
+      />
+      
+      {/* Navigation */}
+      <div className="absolute top-6 flex w-full justify-center gap-2">
+        {variants.map((v) => (
+          <button
+            key={v}
+            onClick={() => setActive(v.toLowerCase())}
+            className={`rounded-full px-4 py-1.5 text-sm font-medium ${
+              v.toLowerCase() === active
+                ? "bg-zinc-100 text-black"
+                : "text-zinc-400 hover:text-white"
+            }`}
+          >
+            {v}
+          </button>
+        ))}
+      </div>
+      
+      {/* Title */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <h2 className="text-4xl font-bold text-white">
+          {variants.find(v => v.toLowerCase() === active)}
+        </h2>
+      </div>
+    </div>
+  );
+}
+```
